@@ -48,7 +48,7 @@ h1,h2,h3,h4,h5,h6, a{
 {
 background-image:url('../img/footer-background.png');
 background-repeat: no-repeat;
-height:300px;
+min-height:300px;
 background-color:#003c51;
 background-position: 90%;
 color:white;

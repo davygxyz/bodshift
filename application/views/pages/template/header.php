@@ -30,7 +30,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
     	<li class="divider"></li>
-     	<li><a href="#">Home</a></li>
+     	<li><a href="home">Home</a></li>
      	<li class="divider"></li>
      	<li><a href="#">About</a></li>
      	<li class="divider"></li>

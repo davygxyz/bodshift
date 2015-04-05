@@ -1,6 +1,12 @@
 <div class="row">
 	<div class="small-12 medium-6 columns small-centered">
-		<form>
+			<?php 
+			//Conditional to check if there are any errors from the Form.
+			if(validation_errors() != NULL) {
+			?>
+			<div class= 'alert-box alert radius'><?php echo validation_errors(); ?></div>
+			<?php }?>
+			<?php echo form_open('login'); ?>
 			<h4>Login</h4>
 			<div class="row">
 			    <div class="large-12 columns">
