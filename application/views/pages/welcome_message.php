@@ -11,7 +11,7 @@
 			</p>
 		</div>
 		<div class="small-12 large-7 columns">
-			<img src="<?php echo base_url();?>/assets/img/welcome-message-image.jpg" />
+			<img src="<?php echo base_url();?>/assets/img/content/welcome-message-image.jpg" />
 		</div>
 	</div>
 </div>
@@ -20,7 +20,7 @@
 	<div class="small-12">
 		<div class="small-12 large-4 columns tab">
 			<div class='title'><h3>Journals</h3></div>
-			<img src="<?php echo base_url();?>/assets/img/jour-tab-image.png"/>
+			<img src="<?php echo base_url();?>/assets/img/content/jour-tab-image.png"/>
 			<div class='desc'>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 				Suspendisse pharetra aliquam augue vitae mollis. 
@@ -30,7 +30,7 @@
 		</div>
 		<div class="small-12 large-4 columns tab">
 			<div class='title'><h3>Profiles</h3></div>
-			<img src="<?php echo base_url();?>/assets/img/pro-tab-image.png"/>
+			<img src="<?php echo base_url();?>/assets/img/content/pro-tab-image.png"/>
 			<div class='desc'>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 				Suspendisse pharetra aliquam augue vitae mollis. 
@@ -40,7 +40,7 @@
 		</div>
 		<div class="small-12 large-4 columns tab">
 			<div class='title'><h3>Transformations</h3></div>
-			<img src="<?php echo base_url();?>/assets/img/trans-tab-image.jpg"/>
+			<img src="<?php echo base_url();?>/assets/img/content/trans-tab-image.jpg"/>
 			<div class='desc'>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 				Suspendisse pharetra aliquam augue vitae mollis. 

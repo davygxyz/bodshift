@@ -4,8 +4,49 @@ body
 	font-family: 'Nixie One', cursive;
 }
 
-h1,h2,h3,h4,h5,h6, a{
+h1,h2,h3,h4,h5,h6, a
+{
 	font-family: 'Nixie One', cursive !important;
+}
+.all-quotes{
+	padding-bottom: 5px;
+}
+.all-quotes img{
+	width: 100%;
+	height:200px;
+}
+.sec-link{
+	width: 100%;
+	text-align: center;
+	border-top: 1px solid black;
+}
+.ba-date{
+	width: 100%;
+	text-align: center;
+}
+.padding-0{
+	padding:0;
+}
+.vp-button{
+	text-align: center;
+}
+.button{
+	background-color: #003c51;
+}
+.title
+{
+	background-image: url('../img/backgrounds/title-background.jpg');
+}
+.title h3
+{
+	color:white;
+	margin: 0 0 0 10px;
+	text-transform: uppercase;
+}
+.ba-title h5
+{
+	text-align: center;
+	text-transform: uppercase;
 }
 .margin-btm-20{
 	margin-bottom: 20px !important;
@@ -46,7 +87,7 @@ h1,h2,h3,h4,h5,h6, a{
 }
 #footer
 {
-background-image:url('../img/footer-background.png');
+background-image:url('../img/backgrounds/footer-background.png');
 background-repeat: no-repeat;
 min-height:300px;
 background-color:#003c51;
@@ -61,4 +102,58 @@ color:white;
 #footer ul li
 {
 	list-style-type: none;
+}
+
+
+/*===Featured Transformation===*/
+#featured-transformation
+{
+	background-color:rgba(0, 60, 82, 0.20);
+}
+
+#ft-wrapper{
+	border: 1px dashed white;
+	margin: 0;
+	padding-bottom:10px;
+}
+
+#ft-wrapper img{
+	width:100%;
+	height:450px;
+}
+#ft-content p{
+	overflow: auto;
+	height:200px;
+}
+
+/*===Transformations===*/
+#transformation-wrapper
+{
+	padding-bottom: 10px;
+}
+#transformation-wrapper img
+{
+	height:150px;
+	width:100%;
+}
+
+/*====Motivation====*/
+#quotes img{
+	width:100%;
+	height:200px;
+}
+#quote-wrapper{
+	padding-bottom: 10px;
+	width:100%;
+	margin:0;
+}
+
+/*====Side Bar====*/
+#menu{
+	text-align: center;
+}
+/*====quotes====*/
+#qotw img{
+	width:100%;
+	height: 500px;
 }

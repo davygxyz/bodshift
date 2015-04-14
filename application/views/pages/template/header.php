@@ -29,27 +29,37 @@
 		  <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-    	<li class="divider"></li>
-     	<li><a href="home">Home</a></li>
-     	<li class="divider"></li>
-     	<li><a href="#">About</a></li>
-     	<li class="divider"></li>
-     	<li><a href="#">Affiliates</a></li>
-     	<li class="divider"></li>
-		<li><a href="#">Sign Up</a></li>
-		<li class="divider"></li>
-		<li><a href="login">Login</a></li>
+		<?php if(isset($logged_in)){
+				if($logged_in == TRUE){
+					echo "
+						<li><a href='".base_url()."index.php/logout'>Log Out</a></li>
+					";
+				}
+			}else{
+				echo "
+					<li class='divider'></li>
+			     	<li><a href='".base_url()."index.php/home'>Home</a></li>
+			     	<li class='divider'></li>
+			     	<li><a href='".base_url()."index.php/about'>About</a></li>
+			     	<li class='divider'></li>
+			     	<li><a href='".base_url()."index.php/affiliates'>Affiliates</a></li>
+			     	<li class='divider'></li>
+					<li><a href='".base_url()."index.php/signup'>Sign Up</a></li>
+					<li class='divider'></li>
+					<li><a href='".base_url()."index.php/login'>Login</a></li>
+				";
+				}?>
     </ul>
-
   </section>
 	  </nav>
 	</div>
 	<div class="row margin-btm-20" id='welcome-banner'>
 		<div class="small-12 columns">
-			<img src="<?php echo base_url();?>/assets/img/welcome-banner.png" />
+			<img src="<?php echo base_url();?>/assets/img/banners/welcome-banner.png" />
 	</div>
 	</div>
 	<div class="row" id='page-wrapper'>
-		<!--<img src='<?php echo base_url();?>assets/img/bodshift-logo.png'/>-->
-
+		<div class='row '>
+					<!--Left Column-->
+			<div class='small-12 large-9 columns'>
 	

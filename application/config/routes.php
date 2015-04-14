@@ -37,6 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+
+$route['quotes/(:num)'] = 'quotes/view/$1';
+$route['quotes'] = "quotes/view";
+$route['logout'] = "logout/view";
 $route['login'] = "login/view";
 $route['home'] = "home/view";
 $route['default_controller'] = "home/view";

@@ -4,14 +4,20 @@
 			//Conditional to check if there are any errors from the Form.
 			if(validation_errors() != NULL) {
 			?>
-			<div class= 'alert-box alert radius'><?php echo validation_errors(); ?></div>
+			<div class= 'alert-box alert radius'><?php echo validation_errors();?></div>
+			<?php }?>
+			<?php
+			//Conditional to check if there are any errors from the Query.
+			if(isset($error)) {
+			?>
+			<div class= 'alert-box alert radius'><?php echo $error;?></div>
 			<?php }?>
 			<?php echo form_open('login'); ?>
 			<h4>Login</h4>
 			<div class="row">
 			    <div class="large-12 columns">
 			      <label>Username:
-			        <input type="text" placeholder="Please enter in your username" name="username"/>
+			        <input type="text" placeholder="Please enter in your username" value="<?php echo set_value('username'); ?>" name="username"/>
 			      </label>
 			      <!--<small class="error">Invalid entry</small>-->
 			    </div>
