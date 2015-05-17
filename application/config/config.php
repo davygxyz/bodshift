@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.bodshift.com/';
+$config['base_url']	= '';
 
 
 $config['assets'] = $config['base_url'] . 'assets/';
