@@ -1,5 +1,4 @@
 <?php
-echo 'THis WORKS BRO';
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
