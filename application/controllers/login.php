@@ -31,9 +31,9 @@ class Login extends CI_Controller{
 				$this->load->view('forms/login',$data);
 				$this->load->view('pages/template/footer');
 			}else{
-				$user_id = $this->login_model->login_validation($username,$password)['user_id'];
-				$first_name = $this->login_model->login_validation($username,$password)['first_name'];
-				$user_name = $this->login_model->login_validation($username,$password)['user_name'];
+				$user_id = $this->login_model->login_validation($username,$password);
+				$first_name = $this->login_model->login_validation($username,$password);
+				$user_name = $this->login_model->login_validation($username,$password);
 				$user_data = array('user_id' => $user_id,
 									'first_name' => $first_name,
 									'user_name' => $user_name,
