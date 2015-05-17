@@ -29,7 +29,7 @@ $config['assets'] = $config['base_url'] . 'assets/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.html';
 
 /*
 |--------------------------------------------------------------------------
