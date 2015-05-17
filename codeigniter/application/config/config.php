@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '/var/www/codeigniter';
+$config['base_url']	= 'bodshift.com';
 
 
 $config['assets'] = $config['base_url'] . 'assets/';
