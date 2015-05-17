@@ -99,7 +99,7 @@
 					";
 				}?>
 		</div>
-		<div class='small-12 columns sec-link'><a href='quotes'>More Quotes</a></div>
+		<div class='small-12 columns sec-link'><a href='<?php echo base_url() ?>/index.php/quotes'>More Quotes</a></div>
 	</div>
 	<!--Quotes END-->
 </div>

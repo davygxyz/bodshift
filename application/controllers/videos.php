@@ -1,6 +1,6 @@
 <?php if(! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Quotes extends CI_Controller{
+class Videos extends CI_Controller{
 
 	function view(){
 		$this->load->database();
@@ -17,7 +17,7 @@ class Quotes extends CI_Controller{
 
 
 		if ($logged_in == TRUE){
-			$data['title'] = 'Quotes';
+			$data['title'] = 'Videos';
 			$data['logged_in'] = $logged_in;
 			$data['user_id'] = $user_id;
 			$data['first_name'] = $first_name;
@@ -25,8 +25,8 @@ class Quotes extends CI_Controller{
 
 			
 			$config = array();
-			$config['base_url'] = base_url().'index.php/quotes';
-			$config['total_rows'] = $this->quotes_model->quotes_rows();
+			$config['base_url'] = base_url().'index.php/videos';
+			$config['total_rows'] = $this->videos_model->videos_rows();
 			$config['per_page'] = 6; 
 			$config['cur_tag_open'] = '&nbsp;<a class="current">';
 			$config['cur_tag_close'] = '</a>';
@@ -39,13 +39,13 @@ class Quotes extends CI_Controller{
 			$page = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
 
 		
-        	$data["pagination_result"] = $this->quotes_model->fetch_data($config["per_page"], $page);
+        	$data["pagination_result"] = $this->videos_model->fetch_data($config["per_page"], $page);
         	$data["links"] = $this->pagination->create_links();
 
-        	//Insert the id number for Quote of the week
-			$data['quote_otw_query'] = $this->quotes_model->quote_otw(5);
+        	//Insert the id number for videos of the week
+			$data['video_otw_query'] = $this->videos_model->videos_otw(1);
 			$this->load->view('pages/template/header',$data);
-			$this->load->view('pages/quotes',$data);
+			$this->load->view('pages/videos',$data);
 			$this->load->view('pages/template/sidebar',$data);
 			$this->load->view('pages/template/footer');
 

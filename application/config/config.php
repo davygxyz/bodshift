@@ -14,7 +14,10 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8888/personal/bodshift';
+$config['base_url']	= '';
+
+
+$config['assets'] = $config['base_url'] . 'assets/';
 
 /*
 |--------------------------------------------------------------------------

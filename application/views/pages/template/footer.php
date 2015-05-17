@@ -23,8 +23,9 @@
       </div>
     </div>
   </div>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/vendor/jquery.js"></script>
+    <script src="<?php echo base_url();?>assets/js/foundation.min.js"></script>
+    <script type="text/javascript" src="<?php echo $assets?>js/script.js"></script>
     <script>
       $(document).foundation();
     </script>

@@ -2,7 +2,7 @@
 	<div class='title'><h3>Quote of the Week</h3></div>
 	<div class='row margin-btm-20'>
 	<?php
-		foreach($quote_otd_query as $result){
+		foreach($quote_otw_query as $result){
 			echo "
 				<div class='small-12 columns' id='qotw'>
 					<img src='".base_url()."/uploads/quotes/".$result['content']."'/>

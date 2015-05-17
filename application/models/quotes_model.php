@@ -11,15 +11,11 @@ class Quotes_model extends CI_Model{
 		return $query->result_array();
 	}
 
-	function quote_otd(){
-		$query = $this->db->query("SELECT * FROM quotes ORDER BY rand() LIMIT 1");
+	function quote_otw($id){
+		$query = $this->db->query("SELECT * FROM quotes WHERE id='$id' LIMIT 1");
 		return $query->result_array();
 	}
 
-	function all_quotes(){
-		$query = $this->db->query("SELECT * FROM quotes ORDER BY dt");
-		return $query->result_array();
-	}
 
 	function quotes_rows(){
 		$query = $this->db->query("SELECT * FROM quotes ORDER BY dt");
@@ -27,7 +23,7 @@ class Quotes_model extends CI_Model{
 	}
 
 	function fetch_data($limit,$page){
-		$query = $this->db->query("SELECT * FROM quotes LIMIT $page,$limit");
+		$query = $this->db->query("SELECT * FROM quotes ORDER BY dt DESC LIMIT $page,$limit");
 
 		 if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
