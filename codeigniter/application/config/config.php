@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= '/var/www/codeigniter';
 
 
 $config['assets'] = $config['base_url'] . 'assets/';
@@ -29,7 +29,7 @@ $config['assets'] = $config['base_url'] . 'assets/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
