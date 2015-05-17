@@ -1,5 +1,5 @@
 <?php
-echo 'THis WORKS BRO'
+echo 'THis WORKS BRO';
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
