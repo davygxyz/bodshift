@@ -4,11 +4,11 @@
 	<div class='row' id='menu'>
 		<h3>Menu</h3>
 		<ul class="side-nav">
-			<li><a href="<?php echo base_url();?>index.php/home">Home</a></li>
-			<li><a href="<?php echo base_url();?>index.php/profile?user_id=<?php echo $user_id; ?>">Profile</a></li>
-			<li><a href="<?php echo base_url();?>index.php/transformations">Transformations</a></li>
-			<li><a href="<?php echo base_url();?>index.php/videos">Videos</a></li>
-			<li><a href="<?php echo base_url();?>index.php/quotes">Quotes</a></li>
+			<li><a href="<?php echo base_url();?>home">Home</a></li>
+			<li><a href="<?php echo base_url();?>profile?user_id=<?php echo $user_id; ?>">Profile</a></li>
+			<li><a href="<?php echo base_url();?>transformations">Transformations</a></li>
+			<li><a href="<?php echo base_url();?>videos">Videos</a></li>
+			<li><a href="<?php echo base_url();?>quotes">Quotes</a></li>
 		</ul>
 	</div>
 	<div class='row' id='featured-request'>

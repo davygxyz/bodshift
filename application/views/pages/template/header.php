@@ -41,7 +41,7 @@
 							<li class='divider'></li>
 					     	<li><a href='".base_url()."home'>Home</a></li>
 					     	<li class='divider'></li>
-					     	<li><a href='".base_url()."contactus'>Contact Us</a></li>
+					     	<li><a href='".base_url()."contact-us'>Contact Us</a></li>
 					     	<li class='divider'></li>
 							<li><a href='".base_url()."signup'>Sign Up</a></li>
 							<li class='divider'></li>

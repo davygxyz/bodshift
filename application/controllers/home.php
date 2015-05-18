@@ -38,6 +38,8 @@ class Home extends CI_Controller {
 			$data['title'] = 'Home';
 			$data['logged_in'] = $logged_in;
 			$data['user_id'] = $user_id;
+
+			echo $user_id;
 			$data['first_name'] = $first_name;
 			$data['user_name'] = $user_name;
 			$this->load->view('pages/template/header',$data);
