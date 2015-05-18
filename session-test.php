@@ -1,5 +1,5 @@
 <?php 
-session_start()
+session_start();
 
 
 $_SESSION['color'] = "blue";
@@ -13,7 +13,7 @@ $_SESSION['color'] = "blue";
 </head>
 <body>
 
-	<h4><?php echo $_SESSION['color']?></h4>
+	<h4><?php echo $_SESSION['color'];?></h4>
 	
 </body>
 </html>
