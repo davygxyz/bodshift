@@ -1,0 +1,12 @@
+body{
+
+}
+#page-wrapper{
+	width: 70%;
+	margin:auto;
+	padding: 5px;
+}
+
+img[alt='header-banner'], img[alt='footer-banner'], img[alt='ad-space']{
+	width:100%;
+}
