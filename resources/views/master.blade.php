@@ -10,7 +10,7 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<!-- Main Admin Css -->
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
@@ -19,7 +19,7 @@
 	<div class='row'>
 		<div class='row'>
 			<div class='col-xs-12'>
-				<img src="/img/header-banner.png" alt='header-banner'/>
+				<img src="{{ URL::asset('img/header-banner.png') }}" alt='header-banner'/>
 			</div>
 			<div class='col-xs-12'>
 				<nav class="navbar navbar-inverse">
@@ -32,7 +32,7 @@
 					        <span class="icon-bar"></span>
 					      </button>
 				    	<a class="navbar-brand" href="#">
-				        	<img alt="Brand" src="/img/logo.png" width="100px">
+				        	<img alt="Brand" src="{{ URL::asset('img/logo.png') }}" width="100px">
 				      	</a>
 				     </div>
 				      	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,7 +60,7 @@
 		</div>
 		<div class='row'>
 			<div class='col-xs-12'>
-				<img src="/img/footer-banner.png" alt='footer-banner'/>
+				<img src="{{ URL::asset('/img/footer-banner.png') }}" alt='footer-banner'/>
 			</div>
 		</div>
 
