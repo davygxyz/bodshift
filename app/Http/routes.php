@@ -10,11 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('index', 'PagesController@index');
+Route::get('/', 'PagesController@index');
 
 Route::get('about', 'PagesController@about');
 
-Route::get('/', 'WelcomeController@index');
+Route::get('donate', 'PagesController@donate');
 
 Route::get('home', 'HomeController@index');
 

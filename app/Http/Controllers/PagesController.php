@@ -14,14 +14,17 @@ class PagesController extends Controller {
 	 */
 	public function index()
 	{
-		$array = ['Lesson 1', 'Lesson 2','Lesson 3'];
-		$name = "David Gilliam";
-		return view("pages.home",['name' => $name, 'lessons' => $array]);
+		return view("pages.home");
 	}
 
 	public function about()
 	{
 		return view("pages.about");
+	}
+
+	public function donate()
+	{
+		return view("pages.donate");
 	}
 
 }

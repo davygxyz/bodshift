@@ -2,7 +2,7 @@
 @section('content')
 <div class='row'>
 	<div class='col-sm-12'>
-		<h2>About Us</h2>
+		<h2>Donations</h2>
 	</div>
 </div>
 <div class='row'>

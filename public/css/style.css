@@ -1,12 +1,44 @@
 body{
-
+	background-image: url('../img/tweed_@2X.png');
+}
+.bottom-margin{
+	margin-bottom: 15px;
 }
 #page-wrapper{
 	width: 70%;
 	margin:auto;
 	padding: 5px;
 }
+#sec-title{
+	background-color: white;
+	margin-bottom: 10px;
+}
 
 img[alt='header-banner'], img[alt='footer-banner'], img[alt='ad-space']{
+	width:100%/9;
+}
+#footer{
 	width:100%;
+	min-height: 400px;
+	background-image: url("../img/footer-banner.png");
+	background-repeat: no-repeat;
+	background-size: 100% 250px;
+	background-color: white;
+
+}
+#ad-space-top img, img[alt='motiv-banner']{
+	width:100%;
+}
+
+img[alt='carousel-content']{
+	width:100%/9;
+}
+#usrs-info{
+	background-color: #003C51;
+}
+.nu-link{
+	text-align: center;
+}
+#transformations{
+	background-color: white;
 }
