@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Bodshift | {{ $title }}</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- Optional theme -->
@@ -33,7 +33,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 					      </button>
-				    	<a class="navbar-brand" href="#">
+				    	<a class="navbar-brand" href="/">
 				        	<img alt="Brand" src="{{ URL::asset('img/logo.png') }}" width="100px class="img-responsive"">
 				      	</a>
 				     </div>
@@ -41,8 +41,8 @@
       						<ul class="nav navbar-left navbar-nav">
       							<li><a href="about">About</a></li>
       							<li><a href="donate">Donate</a></li>
-      							<li><a href="#">Contact Us</a></li>
-      							<li><a href="#">Motivation</a></li>
+      							<li><a href="contact">Contact Us</a></li>
+      							<li><a href="motivation">Motivation</a></li>
       						</ul>
       						<ul class="nav navbar-right navbar-nav">
       							<li><a href="#">Log In</a></li>

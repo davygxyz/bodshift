@@ -4,7 +4,7 @@
 
 @section('content')
 	<div class='row bottom-margin' id="home-carousel">
-		<div class='col-sm-12'>
+		<div class='col-sm-12 hidden-sm hidden-xs'>
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">

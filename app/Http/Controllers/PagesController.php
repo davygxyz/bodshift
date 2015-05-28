@@ -14,17 +14,32 @@ class PagesController extends Controller {
 	 */
 	public function index()
 	{
-		return view("pages.home");
+		$title = "Home";
+		return view("pages.home",['title' => $title]);
 	}
 
 	public function about()
 	{
-		return view("pages.about");
+		$title = "About";
+		return view("pages.about",['title' => $title]);
 	}
 
 	public function donate()
 	{
-		return view("pages.donate");
+		$title = "Donate";
+		return view("pages.donate",['title' => $title]);
+	}
+
+	public function contactus()
+	{
+		$title = "Contact Us";
+		return view("pages.contactus",['title' => $title]);
+	}
+
+	public function motivation()
+	{
+		$title = "Motivation";
+		return view("pages.motivation",['title' => $title]);
 	}
 
 }
