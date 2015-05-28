@@ -20,6 +20,9 @@ Route::get('contact', 'PagesController@contactus');
 
 Route::get('motivation', 'PagesController@motivation');
 
+
+
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
