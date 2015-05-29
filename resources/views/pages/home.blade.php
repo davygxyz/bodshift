@@ -3,6 +3,71 @@
 
 
 @section('content')
+	@if (Auth::check())
+	<div class='row'>
+		<div class='col-xs-12'>
+			<div class="panel panel-default">
+				<div class="panel-heading">Welcome {{ Auth::user()->name ?: '' }}</div>
+					<div class="panel-body">
+						<div class='row'>
+							<div class='col-xs-12'>
+								<div class='row'>
+									<div class='col-xs-12 col-md-3'>
+										<div class='row'>
+											<div class='col-xs-12'>
+												<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">	
+											</div>
+										</div>
+										<ul class="nav nav-pills nav-stacked">
+											<li><a href="#">View Profile</a></li>
+										    <li><a href="#">Edit Profile</a></li>
+										    <li><a href="#">Photo Gallery</a></li>
+										</ul>
+									</div>
+									<div class='col-xs-12 col-md-8'>
+										<div class='row'>
+											<div class='col-xs-12'>
+												<h4>Your Transformation</h4>
+												<hr />
+											</div>
+										</div>
+										<div class='row'>
+											<div class='col-xs-12'>
+												<div class='row'>
+													<div class='col-xs-12'>
+														<div class='row'>
+															<div class="col-md-4">Before</div>
+  															<div class="col-md-4 col-md-offset-4">After</div>
+														</div>
+													</div>
+												</div>
+												<div class='row'>
+													<div class='col-xs-4'>
+														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
+													</div>
+													<div class='col-xs-4'>
+														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
+													</div>
+													<div class='col-xs-4'>
+														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
+													</div>
+												</div>
+												<div class='row'>
+													<div class='col-xs-12'>
+														<a href='#'>View Your Progress</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	@endif
 	<div class='row bottom-margin' id="home-carousel">
 		<div class='col-sm-12 hidden-sm hidden-xs'>
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

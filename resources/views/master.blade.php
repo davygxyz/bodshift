@@ -40,14 +40,18 @@
 				     </div>
 				      	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       						<ul class="nav navbar-left navbar-nav">
-      							<li><a href="about">About</a></li>
-      							<li><a href="donate">Donate</a></li>
-      							<li><a href="contact">Contact Us</a></li>
-      							<li><a href="motivation">Motivation</a></li>
+      							<li><a href="{{URL::to('/about')}}">About</a></li>
+      							<li><a href="{{URL::to('/donate')}}">Donate</a></li>
+      							<li><a href="{{URL::to('/contact')}}">Contact Us</a></li>
+      							<li><a href="{{URL::to('/motivation')}}">Motivation</a></li>
       						</ul>
       						<ul class="nav navbar-right navbar-nav">
-      							<li><a href="auth/login">Log In</a></li>
-      							<li><a href="auth/register">Sign Up</a></li>
+      							@if (Auth::guest())
+      							<li><a href="{{URL::to('/auth/login')}}">Log In</a></li>
+      							<li><a href="{{URL::to('/auth/register')}}">Sign Up</a></li>
+      							@else
+      							<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+      							@endif
       						</ul>
       					</div>
 				  </div>
