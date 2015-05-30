@@ -14,7 +14,7 @@
 	<div class='col-sm-12 col-lg-6'>
 		<div class='row bottom-margin'>
 			<div class='col-sm-12'>
-				<img src="http://placehold.it/600x100" alt='ad-space-right' class="img-responsive">
+				<img src="http://placehold.it/600x100" alt='donate-image' class="img-responsive">
 			</div>
 		</div>
 		<div class='row'>

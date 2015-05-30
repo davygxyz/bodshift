@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use DB;
 class PagesController extends Controller {
 
 	/**
@@ -40,6 +40,13 @@ class PagesController extends Controller {
 	{
 		$title = "Motivation";
 		return view("pages.motivation",['title' => $title]);
+	}
+
+	public function profile($id)
+	{
+		$user_info = DB::select('select * from users where id = ?', [$id]);
+		$user_info = $user_info[0];
+		return view("pages.profile",['user_info' => $user_info]);
 	}
 
 }

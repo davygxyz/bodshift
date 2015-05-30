@@ -1,6 +1,13 @@
 body{
 	background-image: url('../img/tweed_@2X.png');
 }
+.panel-heading{
+	background-image: linear-gradient(to bottom,#003C51 0,#003C51 50%) !important;
+	color:white !important;
+}
+.pad-none{
+	padding:0px;
+}
 .bottom-margin{
 	margin-bottom: 15px;
 }
@@ -10,8 +17,10 @@ body{
 	padding: 5px;
 }
 #sec-title{
-	background-color: white;
 	margin-bottom: 10px;
+}
+#sec-title h3, #sec-title hr{
+	color:white;
 }
 
 img[alt='header-banner'], img[alt='footer-banner'], img[alt='ad-space']{
@@ -33,12 +42,86 @@ img[alt='header-banner'], img[alt='footer-banner'], img[alt='ad-space']{
 img[alt='carousel-content']{
 	width:100%/9;
 }
-#usrs-info{
+#new-usr{
 	background-color: #003C51;
+}
+#new-usr a{
+	color: white;
 }
 .nu-link{
 	text-align: center;
 }
 #transformations{
 	background-color: white;
+}
+img[alt='ad-space-right']{
+	  margin-top: 50px;
+}
+.btn{
+	background-color: #003c51 !important;
+	color:white;
+}
+
+/*=========Journey Slider==========*/
+.slider {
+    position: relative;
+    
+    background-color: #003c51;
+    height: 450px;
+    margin: 10px;
+    padding: 10px;
+    
+    overflow: hidden;
+}
+.track {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    width: 2000px;
+}
+.progress-pic img{
+	width: auto;
+  	height: 300px;
+}
+.progress-pic {
+    float: left;
+    
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    width: 200px;
+    height: 400px;
+
+    color:white;
+    
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+}
+.book:hover {
+    opacity: 0.5;
+}
+.slider .left, .slider .right {
+    position: absolute;
+    color: white;
+    font-size: 48px;
+    top: 35%;
+    
+    cursor: pointer;
+    z-index: 1;
+}
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
 }

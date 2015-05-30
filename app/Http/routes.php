@@ -20,6 +20,7 @@ Route::get('contact', 'PagesController@contactus');
 
 Route::get('motivation', 'PagesController@motivation');
 
+Route::get('profile/{id}', 'PagesController@profile');
 
 
 

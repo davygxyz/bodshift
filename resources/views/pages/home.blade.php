@@ -12,22 +12,22 @@
 						<div class='row'>
 							<div class='col-xs-12'>
 								<div class='row'>
-									<div class='col-xs-12 col-md-3'>
+									<div class='col-xs-12 col-md-2'>
 										<div class='row'>
 											<div class='col-xs-12'>
 												<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">	
 											</div>
 										</div>
 										<ul class="nav nav-pills nav-stacked">
-											<li><a href="#">View Profile</a></li>
+											<li><a href="{{URL::to('/profile')}}/{{Auth::user()->id }}">View Profile</a></li>
 										    <li><a href="#">Edit Profile</a></li>
 										    <li><a href="#">Photo Gallery</a></li>
 										</ul>
 									</div>
-									<div class='col-xs-12 col-md-8'>
+									<div class='col-xs-12 col-md-10'>
 										<div class='row'>
 											<div class='col-xs-12'>
-												<h4>Your Transformation</h4>
+												<h3> Your Journey <small> Push Yourself! </small></h3>
 												<hr />
 											</div>
 										</div>
@@ -36,25 +36,27 @@
 												<div class='row'>
 													<div class='col-xs-12'>
 														<div class='row'>
-															<div class="col-md-4">Before</div>
-  															<div class="col-md-4 col-md-offset-4">After</div>
+															<div class="col-md-4 text-center">Before</div>
+  															<div class="col-md-4 col-md-offset-4 text-center">After</div>
 														</div>
 													</div>
 												</div>
 												<div class='row'>
-													<div class='col-xs-4'>
+													<div class='col-xs-12'>
+													<div class='col-xs-4 pad-none'>
 														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
 													</div>
-													<div class='col-xs-4'>
+													<div class='col-xs-4 pad-none'>
 														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
 													</div>
-													<div class='col-xs-4'>
+													<div class='col-xs-4 pad-none'>
 														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
 													</div>
 												</div>
+												</div>
 												<div class='row'>
 													<div class='col-xs-12'>
-														<a href='#'>View Your Progress</a>
+														<a href='#'>View Your Journey</a>
 													</div>
 												</div>
 											</div>
@@ -117,12 +119,15 @@
 			<img src="http://placehold.it/960x500" alt='motiv-banner' class="img-responsive">
 		</div>
 	</div>
-	<div class='row bottom-margin' id='usrs-info'>
+	<div class='row bottom-margin' id='new-usr'>
 	  	<div class='col-sm-12'>
 	  		<div class='row'>
 	  			<div class='col-sm-7'>
 	  				<div class='row'>
-	  					<div class='col-sm-12' id='sec-title'><h4>New Users</h4></div>
+	  					<div class='col-sm-12' id='sec-title'>
+	  						<h3>New Users</h3>
+	  						<hr />
+	  					</div>
 	  				</div>
 	  				<div class='row'>
 	  					<div class='col-sm-12 col-lg-3'>
@@ -156,39 +161,42 @@
 	  <div class='row' id='transformations'>
 	  	<div class='col-sm-12'>
 	  		<div class='row'>
-	  				<div class='col-sm-12'><h4>Transformations</h4></div>
+	  				<div class='col-sm-12'>
+	  					<h3>Transformations</h3>
+	  					<hr />
+	  				</div>
 			  	<div class='col-sm-6'>
-			  		<div class='col-sm-12'><h5>Male</h5></div>
+			  		<div class='col-sm-12'><h4 class='text-center'>Male</h4></div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
-			  				<img src="http://placehold.it/600x300" alt='ad-space-right' class="img-responsive">
+			  				<img src="http://placehold.it/600x300" alt='male-trans-photo' class="img-responsive">
 			  			</div>
 			  		</div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
 			  				<div class="list-group">
-							  <a href="#" class="list-group-item"> Teens (19 and below)</a>
-							  <a href="#" class="list-group-item">Adults (20 - 30)</a>
-							  <a href="#" class="list-group-item">Adults (30 - 40)</a>
-							  <a href="#" class="list-group-item">Adults (40 +)</a>
+							  <a href="#" class="list-group-item">Male Teens (19 and below)</a>
+							  <a href="#" class="list-group-item">Male (20 - 30)</a>
+							  <a href="#" class="list-group-item">Male (30 - 40)</a>
+							  <a href="#" class="list-group-item">Male (40 +)</a>
 							</div>
 			  			</div>
 			  		</div>
 			  	</div>
 			  	<div class='col-sm-6'>
-			  		<div class='col-sm-12'><h5>Female</h5></div>
+			  		<div class='col-sm-12'><h4 class='text-center'>Female</h4></div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
-			  				<img src="http://placehold.it/600x300" alt='ad-space-right' class="img-responsive">
+			  				<img src="http://placehold.it/600x300" alt='female-trans-photo' class="img-responsive">
 			  			</div>
 			  		</div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
 			  				<div class="list-group">
-							  <a href="#" class="list-group-item"> Teens (19 and below)</a>
-							  <a href="#" class="list-group-item">Adults (20 - 30)</a>
-							  <a href="#" class="list-group-item">Adults (30 - 40)</a>
-							  <a href="#" class="list-group-item">Adults (40 +)</a>
+							  <a href="#" class="list-group-item">Female Teens (19 and below)</a>
+							  <a href="#" class="list-group-item">Female (20 - 30)</a>
+							  <a href="#" class="list-group-item">Female (30 - 40)</a>
+							  <a href="#" class="list-group-item">Female (40 +)</a>
 							</div>
 			  			</div>
 			  		</div>
