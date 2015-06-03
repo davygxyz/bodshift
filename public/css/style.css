@@ -1,9 +1,29 @@
 body{
-	background-image: url('../img/tweed_@2X.png');
+	background-image: url('../img/site_bg/tweed_@2X.png');
+	font-family: 'Gruppo', cursive !important;
+}
+#header-banner{
+    background-image: url("../img/header-banner.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    width:100%;
+    height:200px;
+    background-size: 1170px 200px;
+}
+
+.row{
+    margin:0px;
+}
+.container{
+    padding:0px;
 }
 .panel-heading{
 	background-image: linear-gradient(to bottom,#003C51 0,#003C51 50%) !important;
 	color:white !important;
+}
+#site-wrapper{
+    background-color: white;
+    box-shadow: 0px 0px 40px black
 }
 .pad-none{
 	padding:0px;
@@ -12,10 +32,9 @@ body{
 	margin-bottom: 15px;
 }
 #page-wrapper{
-	width: 70%;
-	margin:auto;
-	padding: 5px;
+	background:white;
 }
+
 #sec-title{
 	margin-bottom: 10px;
 }
@@ -30,9 +49,9 @@ img[alt='header-banner'], img[alt='footer-banner'], img[alt='ad-space']{
 	width:100%;
 	min-height: 400px;
 	background-image: url("../img/footer-banner.png");
-	background-repeat: no-repeat;
-	background-size: 100% 250px;
-	background-color: white;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1170px 200px;
 
 }
 #ad-space-top img, img[alt='motiv-banner']{

@@ -14,11 +14,10 @@
 
 				    <li>Name: {{ $user_info->name}}</li>
 				    <li>Email: {{ $user_info->email}}</li>
-				    <li>Age:</li>
-				    <li>Height:</li>
-				    <li>Weight:</li>
+				    <li>Age:<span id='age-js'>{{ $user_info->birthday}}</span></li>
+				    <li>Height: </li>
+				    <li>Weight: {{ $user_info->weight}}</li>
 				    <li>Member Since: {{ date("m/d/Y",strtotime($user_info->created_at)) }} </li>
-				    <li><a href="#">Photo Gallery</a></li>
 				</ul>
 			</div>
 		</div>
@@ -54,7 +53,12 @@
 	<div class='col-xs-12 col-md-9'>
 		<div class='row'>
 			<div class='col-xs-12'>
-				<a href='#' class=' btn btn-block'>Back to Home</a>
+				<a href="{{URL::to('/')}}" class=' btn btn-block'>Back to Home</a>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col-xs-12'>
+				<h3 class='text-center'> Body Journey <small> Push Yourself! </small></h3>
 			</div>
 		</div>
 		<div class='row'>

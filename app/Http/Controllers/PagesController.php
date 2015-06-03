@@ -38,8 +38,11 @@ class PagesController extends Controller {
 
 	public function motivation()
 	{
-		$title = "Motivation";
-		return view("pages.motivation",['title' => $title]);
+		$video_query = DB::table('mot_videos')->paginate(3);
+		$quote_query = DB::table('mot_images')->paginate(3);
+		
+
+		return view("pages.motivation",['video_query' => $video_query],['quote_query' => $quote_query]);
 	}
 
 	public function profile($id)

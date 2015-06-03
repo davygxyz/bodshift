@@ -1,3 +1,4 @@
+/*Body Journey slider start*/
 function get_width(){
     var widths = [];
     $('.progress-pic').each(function(){
@@ -33,3 +34,19 @@ function get_width(){
     };
 
     }, 6);
+  /*Body Journey slider end*/
+
+  /*Age on profile page Start*/
+  var age = document.getElementById('age-js').innerHTML;
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
+    document.getElementById('age-js').innerHTML = " "+getAge(age);
+    /*Age on profile page End*/

@@ -36,6 +36,20 @@
 						</div>
 
 						<div class="form-group">
+							<label class="col-md-4 control-label">Confirm E-Mail</label>
+							<div class="col-md-6">
+								<input type="email" class="form-control" name="email_confirmation">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Username</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="username" value="{{ old('username') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label class="col-md-4 control-label">Password</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">
@@ -46,6 +60,27 @@
 							<label class="col-md-4 control-label">Confirm Password</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password_confirmation">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Birthday</label>
+							<div class="col-md-6">
+								<input type="date" class="form-control" name="birthday" value="{{ old('birthday') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Weight</label>
+							<div class="col-md-6">
+								<input type="number" class="form-control" name="weight" value="{{ old('weight') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">About Me</label>
+							<div class="col-md-6">
+							<textarea name='about' style="width: 100%; height: 150px; resize: vertical;">{{ old('about-me') }}</textarea>
 							</div>
 						</div>
 
