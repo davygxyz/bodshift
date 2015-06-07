@@ -24,7 +24,7 @@
 	<!--Page Wrapper Starts-->
 	<div class="container">
 		<div class='row'>
-			<div class='xs-col-12' id='site-wrapper'>
+			<div class='col-xs-12' id='site-wrapper'>
 				<!--Site Banner Header Start-->
 				<div class='row'>
 					<div class='col-xs-12' id='header-banner'>

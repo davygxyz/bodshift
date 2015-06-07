@@ -120,7 +120,7 @@
 	</div>
 	<div class='row bottom-margin' id='motiv-banner'>
 		<div class='col-sm-12' id='home-middle-message'>
-			<div id='motiv-title'>strength</div>
+			<div class='col-sm-12'><h1 id='motiv-title'>strength</h1></div>
 		</div>
 	</div>
 	<div class='row bottom-margin' id='new-usr'>
