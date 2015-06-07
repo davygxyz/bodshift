@@ -1,4 +1,19 @@
-/*Body Journey slider start*/
+//===== DROPZONE CONFIGURATION =====
+
+Dropzone.options.myAwesomeDropzone = {
+  // Prevents Dropzone from uploading dropped files immediately
+    init: function () {
+        // Set up any event handlers
+        this.on('complete', function () {
+            if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                location.reload();
+            }
+        });
+    }
+    };
+//===== DROPZONE CONFIGURATION END=====
+
+
 function get_width(){
     var widths = [];
     $('.progress-pic').each(function(){

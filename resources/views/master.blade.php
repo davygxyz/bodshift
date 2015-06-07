@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<!-- Main Admin Css -->
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/dropzone.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/lightbox.css') }}">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -67,12 +69,13 @@
 					</div>
 				</div>
 				<!--Site Navigation End-->
-				<!--Top Ad Start-->
+				<!--Top Ad Start
 				<div class='row bottom-margin'  id="ad-space-top">
 					<div class='col-sm-12'>
 						<img src="http://placehold.it/960x100" alt='ad-space-top' class="img-responsive">
 					</div>
 				</div>
+				-->
 				<!--Top Ad End-->
 				<!--Site Content Start-->
 				<div class='row bottom-margin'   id='main-content'>
@@ -94,6 +97,8 @@
 	@yield('footer')
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="{{ URL::asset('js/dropzone.js') }}"></script>
+	<script src="{{ URL::asset('js/lightbox.min.js') }}"></script>
 	<script src="{{ URL::asset('js/script.js') }}"></script>
 </body>
 </html>

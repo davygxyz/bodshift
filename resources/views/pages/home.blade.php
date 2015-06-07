@@ -19,12 +19,13 @@
 											</div>
 										</div>
 										<ul class="nav nav-pills nav-stacked">
-											<li><a href="{{URL::to('/profile')}}/{{Auth::user()->id }}">Profile</a></li>
-										    <li><a href="#">Photo Gallery</a></li>
+											<li><a href="{{URL::to('/profile')}}/user_id={{Auth::user()->id }}">Profile</a></li>
+										    <li><a href="{{URL::to('/gallery')}}/user_id={{Auth::user()->id }}">Photo Gallery</a></li>
 										    <hr/>
 										    <li><a href="#">Journal</a></li>
 										    <li><a href="#">Body Goals</a></li>
 										    <li><a href="#">Body Journey</a></li>
+										    <li><a href="#">Workout Plan</a></li>
 										</ul>
 									</div>
 									<div class='col-xs-12 col-md-10'>
@@ -86,21 +87,21 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 			    <div class="item active">
-			      <img src="http://placehold.it/1200x500" alt='carousel-content'>
+			      <a href="{{URL::to('/auth/register')}}"><img src="{{ URL::asset('img/welcome.png') }}" alt='carousel-banner'></a>
 			      <div class="carousel-caption">
-			        Test One
+			       
 			      </div>
 			    </div>
 			    <div class="item">
-			      <img src="http://placehold.it/1200x500" alt='carousel-content'>
+			      <a href="{{URL::to('/auth/register')}}"><img src="{{ URL::asset('img/banners/signupforfree.png') }}" alt='carousel-banner'></a>
 			      <div class="carousel-caption">
-			       Test Two
+			       
 			      </div>
 			    </div>
 			   <div class="item">
-			      <img src="http://placehold.it/1200x500" alt='carousel-content'>
+			      <a href="{{URL::to('/auth/register')}}"><img src="{{ URL::asset('img/focus-banner.png') }}" alt='carousel-banner'></a>
 			      <div class="carousel-caption">
-			       Test Three
+			       
 			      </div>
 			    </div>
 			  </div>
@@ -118,8 +119,8 @@
 		</div>
 	</div>
 	<div class='row bottom-margin' id='motiv-banner'>
-		<div class='col-sm-12'>
-			<img src="http://placehold.it/960x500" alt='motiv-banner' class="img-responsive">
+		<div class='col-sm-12' id='home-middle-message'>
+			<div id='motiv-title'>strength</div>
 		</div>
 	</div>
 	<div class='row bottom-margin' id='new-usr'>
@@ -164,15 +165,17 @@
 	  <div class='row' id='transformations'>
 	  	<div class='col-sm-12'>
 	  		<div class='row'>
-	  				<div class='col-sm-12'>
-	  					<h3>Transformations</h3>
-	  					<hr />
-	  				</div>
+	  			<div class='col-sm-12'>
+  					<h3>Transformations</h3>
+  					<hr />
+  				</div>
+	  		</div>
+	  		<div class='row'>
 			  	<div class='col-sm-6'>
 			  		<div class='col-sm-12'><h4 class='text-center'>Male</h4></div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
-			  				<img src="http://placehold.it/600x300" alt='male-trans-photo' class="img-responsive">
+			  				<img src="{{ URL::asset('img/male-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
 			  			</div>
 			  		</div>
 			  		<div class='row'>
@@ -191,7 +194,7 @@
 			  		<div class='col-sm-12'><h4 class='text-center'>Female</h4></div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
-			  				<img src="http://placehold.it/600x300" alt='female-trans-photo' class="img-responsive">
+			  				<img src="{{ URL::asset('img/female-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
 			  			</div>
 			  		</div>
 			  		<div class='row'>

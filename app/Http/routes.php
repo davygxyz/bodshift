@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 Route::get('/', 'PagesController@index');
 
 Route::get('about', 'PagesController@about');
@@ -20,7 +21,16 @@ Route::get('contact', 'PagesController@contactus');
 
 Route::get('motivation', 'PagesController@motivation');
 
-Route::get('profile/{id}', 'PagesController@profile');
+Route::get('profile/user_id={id}', 'PagesController@profile');
+
+//Gallery Routes
+Route::get('gallery/user_id={id}', 'PagesController@photo_gallery');
+
+Route::post('gallery/upload', 'Upload@userGallery');
+
+Route::get('gallery/delete/image_id={id}', 'Delete@galleryImage');
+
+
 
 
 

@@ -52,7 +52,42 @@ img[alt='header-banner'], img[alt='footer-banner'], img[alt='ad-space']{
 	background-position: center center;
     background-repeat: no-repeat;
     background-size: 1170px 200px;
+}
+/*===== CAROUSEL SECTION =====*/
+img[alt='carousel-banner']{
+    height:500px !important;
+    width:100%;
+}
 
+/*===== HOME TRANSFORMATION SECTION =====*/
+a.list-group-item:hover{
+    background-color: #003c51 !important;
+    color:white;
+}
+
+img[alt='home-trans-photo']{
+    width:100%;
+    height:300px;
+}
+
+/*===== MIDDLE MOTIVATION AREA======*/
+#motiv-title{
+    font-size: 200px;
+    color:white;
+    text-transform: uppercase;
+    text-shadow:10px 10px 20px black;
+    padding-top: 30px;
+  padding-bottom: 30px;
+}
+#home-middle-message{
+    width:100%;
+    min-height: 500px;
+    background-image: url("../img/site_bg/blue_smoke.png");
+    background-repeat: no-repeat;
+    background-size: 100% 500px;
+    background-attachment: fixed;
+    background-position: center center;
+    z-index: 0;
 }
 #ad-space-top img, img[alt='motiv-banner']{
 	width:100%;
