@@ -26,7 +26,7 @@ Route::get('profile/user_id={id}', 'PagesController@profile');
 //Gallery Routes
 Route::get('gallery/user_id={id}', 'PagesController@photo_gallery');
 
-Route::post('gallery/upload', 'Upload@userGallery');
+Route::post('gallery/uploads', 'Upload@userGallery');
 
 Route::get('gallery/delete/image_id={id}', 'Delete@galleryImage');
 

@@ -14,7 +14,7 @@
 					<div class='col-xs-12 bottom-margin'>
 						<h4 class='text-center'>Upload Photo</h4>
 
-						<form class="dropzone" enctype="multipart/form-data" method="POST" id="my-awesome-dropzone" action="{{ url('gallery/upload') }}">	
+						<form class="dropzone" enctype="multipart/form-data" method="POST" id="my-awesome-dropzone" action="{{ url('gallery/uploads') }}">	
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="fallback">
 						    <input name="file" type="file" multiple />
