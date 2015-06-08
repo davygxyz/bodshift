@@ -14,7 +14,7 @@ class Delete extends Controller {
 
 	public function galleryImage($id){
 		$user_id = Auth::id();
-		DB::select('DELETE from gallery_images where id = ?', [$id]);
+		DB::table('gallery_images')->where('id', $id)->delete();
 
 		return Redirect::back();
 
