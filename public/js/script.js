@@ -1,6 +1,6 @@
 //===== DROPZONE CONFIGURATION =====
 
-Dropzone.options.myAwesomeDropzone = {
+/*Dropzone.options.myAwesomeDropzone = {
   // Prevents Dropzone from uploading dropped files immediately
     init: function () {
         // Set up any event handlers
@@ -10,7 +10,7 @@ Dropzone.options.myAwesomeDropzone = {
             }
         });
     }
-    };
+    };*/
 //===== DROPZONE CONFIGURATION END=====
 
 
