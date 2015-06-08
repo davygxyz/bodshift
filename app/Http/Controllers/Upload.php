@@ -17,7 +17,7 @@ class Upload extends Controller {
 	}
 
 	public function userGallery() {
-	$file = Input::file('file');
+	$file = Request::file('file');
 	$destinationPath = 'uploads/user/photo_gallery';
 	// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
 	$filename = str_random(12);
@@ -25,7 +25,7 @@ class Upload extends Controller {
 	//$extension =$file->getClientOriginalExtension(); 
 	$user_id = Auth::id();
 	DB::select("INSERT INTO gallery_images(file,user_id) Values('$filename','$user_id')");
-	$upload_success = Input::file('file')->move($destinationPath, $filename);
+	$upload_success = Request::file('file')->move($destinationPath, $filename);
 
 	if( $upload_success ) {
 	   return Response::json('success', 200);
