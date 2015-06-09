@@ -18,12 +18,16 @@ class Upload extends Controller {
 	//$filename = $file->getClientOriginalName();
 	//$extension =$file->getClientOriginalExtension(); 
 	$user_id = Auth::id();
-	DB::select("INSERT INTO gallery_images(file,user_id) Values('$filename','$user_id')");
+
+
+	DB::table('gallery_images')->insert(
+    array('file' => $filename, 'user_id' => $user_id)
+	);
 	$upload_success = Request::file('file')->move($destinationPath, $filename);
 	if( $upload_success ) {
-	   //return Response::json('success', 200);
+	   return Response::json('success', 200);
 	} else {
-	   //return Response::json('error', 400);
+	   return Response::json('error', 400);
 	}
 	}
 }
