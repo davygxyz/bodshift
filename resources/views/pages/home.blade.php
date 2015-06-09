@@ -134,19 +134,19 @@
 	  					</div>
 	  				</div>
 	  				<div class='row'>
-	  					<div class='col-sm-12 col-lg-3'>
+	  					<div class='col-sm-12 col-lg-3 home-pics'>
 	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
 	  						<div class='nu-link'><a href='#'>View Profile</a></div>
 	  					</div>
-	  					<div class='col-sm-12 col-lg-3'>
+	  					<div class='col-sm-12 col-lg-3 home-pics'>
 	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
 	  						<div class='nu-link'><a href='#'>View Profile</a></div>
 	  					</div>
-	  					<div class='col-sm-12 col-lg-3'>
+	  					<div class='col-sm-12 col-lg-3 home-pics'>
 	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
 	  						<div class='nu-link'><a href='#'>View Profile</a></div>
 	  					</div>
-	  					<div class='col-sm-12 col-lg-3'>
+	  					<div class='col-sm-12 col-lg-3 home-pics'>
 	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
 	  						<div class='nu-link'><a href='#'>View Profile</a></div>
 	  					</div>
@@ -166,7 +166,7 @@
 	  	<div class='col-sm-12'>
 	  		<div class='row'>
 	  			<div class='col-sm-12'>
-  					<h3>Transformations</h3>
+  					<h3 class='h3-title'>Transformations</h3>
   					<hr />
   				</div>
 	  		</div>

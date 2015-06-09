@@ -64,6 +64,13 @@
 						</div>
 
 						<div class="form-group">
+							<label class="col-md-4 control-label">Profile Picture</label>
+							<div class="col-md-6">
+								<input type="file" class="form-control" name="file" value="{{ old('file') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label class="col-md-4 control-label">Birthday</label>
 							<div class="col-md-6">
 								<input type="date" class="form-control" name="birthday" value="{{ old('birthday') }}">

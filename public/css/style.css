@@ -2,15 +2,25 @@ body{
 	background-image: url('../img/site_bg/tweed_@2X.png');
 	font-family: 'Gruppo', cursive !important;
 }
+hr{
+    margin-bottom:5px !important;
+    margin-top:5px !important;
+}
+.padding-5{
+    padding: 5px !important;
+}
+.content{
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
 #header-banner{
     background-image: url("../img/header-banner.png");
     background-position: center;
     background-repeat: no-repeat;
     width:100%;
-    height:200px;
+    height:150px;
     background-size: 500px 150px;
 }
-
 .col-sm-12, .col-xs-12{
     padding:0px;
 }
@@ -206,32 +216,58 @@ img[alt='ad-space-right']{
     #motiv-title{
         font-size: 6em;
     }
+    #header-banner{
+    background-size: 550px 200px;
+    height:200px;
+    }
+}
+
 }
 @media(min-width:560px){
     #motiv-title{
         font-size: 6.5em;
         padding:3%;
     }
+    #header-banner{
+    background-size: 615px 200px;
+    }
 }
 @media(min-width:650px){
     #motiv-title{
         font-size: 7.8em;
     }
+    #header-banner{
+    background-size: 750px 200px;
+    }
+
 }
 @media(min-width:768px){
     #motiv-title{
         font-size: 8.5em;
     }
+    #header-banner{
+    background-size: 750px 200px;
+    }
 
 }
 @media(min-width:992px){
+    #header-banner{
+    background-size: 970px 200px;
+    }
     #motiv-title{
         font-size: 11.5em;
+    }
+    .h3-title{
+        padding-left:15px !important;
     }
 }
 @media(min-width:1200px){
     #motiv-title{
         font-size: 14em;
+    }
+
+    .home-pics{
+        padding: 5px;
     }
 
     #sec-title h3, #sec-title hr{

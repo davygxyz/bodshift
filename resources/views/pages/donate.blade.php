@@ -1,17 +1,17 @@
 @extends('master')
 @section('content')
 <div class='row'>
-	<div class='col-sm-12'>
+	<div class='col-sm-12 content'>
 		<h2>Donations</h2>
 	</div>
 </div>
 <div class='row'>
-	<div class='col-sm-12 col-lg-6'>
+	<div class='col-sm-12 col-lg-6 content'>
 		<p>
 			Pellentcitur a vitae orci. Pellentesque euismod porttitor tortor i in urna et, vehicula blandit ante. Praesent est libero, tempor nec interdum eget, accumsan id metus. Curabitur varius quam sit amet mauris tempus, ut elementum purus luctus.
 		</p>
 	</div>
-	<div class='col-sm-12 col-lg-6'>
+	<div class='col-sm-12 col-lg-6 content'>
 		<div class='row bottom-margin'>
 			<div class='col-sm-12'>
 				<img src="http://placehold.it/600x100" alt='donate-image' class="img-responsive">

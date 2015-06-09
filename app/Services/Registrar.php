@@ -2,6 +2,7 @@
 
 use App\User;
 use Validator;
+use Request;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
 class Registrar implements RegistrarContract {
@@ -21,7 +22,7 @@ class Registrar implements RegistrarContract {
 			'username' => 'required|max:255|unique:users',
 			'birthday' => 'required',
 			'weight' => 'required|max:3',
-			'about' => 'max:300'
+			'about' => 'max:300',
 		]);
 	}
 
@@ -41,6 +42,7 @@ class Registrar implements RegistrarContract {
 			'birthday' => $data['birthday'],
 			'weight' => $data['weight'],
 			'about' => $data['about'],
+			'avatar' => $data['file'],
 		]);
 	}
 

@@ -1,12 +1,12 @@
 @extends('master')
 @section('content')
 <div class='row'>
-  <div class='col-sm-12 col-md-6 col-md-offset-3'>
+  <div class='col-sm-12 col-md-6 col-md-offset-3 content'>
     <h2>Contact Us</h2>
   </div>
 </div>
 <div class='row'>
-  <div class='col-sm-12 col-md-6 col-md-offset-3'>
+  <div class='col-sm-12 col-md-6 col-md-offset-3 content'>
     <form>
       <div class="form-group">
         <label for="ct-firstname">First Name:</label>
