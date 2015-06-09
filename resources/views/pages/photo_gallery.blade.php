@@ -20,6 +20,13 @@
 						    <input name="file" type="file" multiple />
 						  	</div>		
 						</form>
+
+						<form enctype="multipart/form-data" method="POST"  action="{{ url('gallery/uploads') }}">	
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							
+						    <input name="file" type="file" multiple />
+						  	<input type='submit' value='submit'>		
+						</form>
 					</div>
 					<div class='col-xs-12'>
 						<img src="http://placehold.it/300x700" alt='profile-picture' class="img-responsive">
