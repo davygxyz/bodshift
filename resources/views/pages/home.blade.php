@@ -22,7 +22,7 @@
 											<li><a href="{{URL::to('/profile')}}/user_id={{Auth::user()->id }}">Profile</a></li>
 										    <li><a href="{{URL::to('/gallery')}}/user_id={{Auth::user()->id }}">Photo Gallery</a></li>
 										    <hr/>
-										    <li><a href="#">Journal</a></li>
+										    <li><a href="{{URL::to('/journal')}}/user_id={{Auth::user()->id }}">Journal</a></li>
 										    <li><a href="#">Body Goals</a></li>
 										    <li><a href="#">Body Journey</a></li>
 										    <li><a href="#">Workout Plan</a></li>

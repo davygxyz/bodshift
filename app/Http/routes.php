@@ -23,6 +23,10 @@ Route::get('motivation', 'PagesController@motivation');
 
 Route::get('profile/user_id={id}', 'PagesController@profile');
 
+Route::get('journal/user_id={id}', 'PagesController@journal');
+
+Route::post('journal/uploads', 'Upload@userJournal');
+
 //Gallery Routes
 Route::get('gallery/user_id={id}', 'PagesController@photo_gallery');
 

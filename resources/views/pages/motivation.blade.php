@@ -5,6 +5,7 @@
 		<h2>Motivation</h2>
 	</div>
 </div>
+
 <div class='row'>
 	<div class='col-xs-12 content'>
 		<div class='row'>

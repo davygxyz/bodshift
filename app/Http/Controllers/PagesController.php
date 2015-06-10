@@ -74,4 +74,12 @@ class PagesController extends Controller {
 		return view("pages.photo_gallery",compact('data'));
 	}
 
+	public function journal($id)
+	{
+		$title = "Journal";
+		$user_journal = DB::table('journal')->where('user_id',$id)->get();
+		$data = array( 'title' => $title, 'id' => $id, 'journal' => $user_journal);
+		return view("pages.journal",compact('data'));
+	}
+
 }

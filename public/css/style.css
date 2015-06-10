@@ -21,6 +21,16 @@ hr{
     height:150px;
     background-size: 500px 150px;
 }
+
+.btn-primary{
+    background-image: linear-gradient(to bottom,#003C51 0,#003C51 50%);
+
+}
+.btn-primary:hover{
+    color:#333;
+
+}
+
 .col-sm-12, .col-xs-12{
     padding:0px;
 }

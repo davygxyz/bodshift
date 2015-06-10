@@ -30,4 +30,25 @@ class Upload extends Controller {
 	   return Response::json('error', 400);
 	}
 	}
+
+
+	public function userJournal() {
+		return(Request::all());
+		/*
+		Validator::make($data, [
+			'name' => 'required|max:255',
+			'email' => 'required|email|max:255|unique:users|confirmed',
+			'password' => 'required|confirmed|min:6',
+			'username' => 'required|max:255|unique:users',
+			'birthday' => 'required',
+			'weight' => 'required|max:3',
+			'about' => 'max:300',
+		]);
+	*/
+		/*
+		DB::table('journal')->insert(
+    	array('name' => $data['name'], 'user_id' => $data['user_id'],'content' => $data['content'],'date' => $data['date']);
+		);
+		*/
+	}
 }

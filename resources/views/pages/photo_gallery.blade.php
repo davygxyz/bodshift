@@ -28,15 +28,21 @@
 				@endif
 			</div>
 			
-			<div class='col-xs-12 col-md-9'>
+			<div class='col-xs-12 col-md-9 content'>
 				<div class='row'>
+					<?php $c=0; ?>
 					@foreach ($data['query'] as $gallery)
-					<div class='col-sm-12 col-md-3 bottom-margin'>
+					<div class='col-sm-12 col-md-3 bottom-margin padding-5'>
+						<?php $c++; ?>
 						@if($data['id'] == Auth::user()->id)
 						<a href="{{ URL::to('/gallery/delete/image_id='.$gallery->id)}} "><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 						@endif
+
 						<a href="{{ URL::asset('uploads/user/photo_gallery').'/'.$gallery->file }}" data-lightbox="user-gallery"><img src="{{ URL::asset('uploads/user/photo_gallery').'/'.$gallery->file }}"alt='user-gallery-image' class="img-responsive"></a>
 					</div>
+					@if($c % 4 == 0 )
+					<div class="clearfix visible-lg-block"></div>
+					@endif
 					@endforeach
 				</div>
 			</div>
