@@ -4,6 +4,7 @@ use App\User;
 use Validator;
 use Request;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use Auth;
 
 class Registrar implements RegistrarContract {
 
@@ -23,8 +24,10 @@ class Registrar implements RegistrarContract {
 			'birthday' => 'required',
 			'weight' => 'required|max:3',
 			'about' => 'max:300',
+			'file' => 'max:10000|mimes:jpeg,png,gif,jpg'
 		]);
 	}
+
 
 	/**
 	 * Create a new user instance after a valid registration.
@@ -32,18 +35,33 @@ class Registrar implements RegistrarContract {
 	 * @param  array  $data
 	 * @return User
 	 */
+
 	public function create(array $data)
 	{
-		return User::create([
-			'name' => $data['name'],
-			'email' => $data['email'],
-			'password' => bcrypt($data['password']),
-			'username' => $data['username'],
-			'birthday' => $data['birthday'],
-			'weight' => $data['weight'],
-			'about' => $data['about'],
-			'avatar' => $data['file'],
-		]);
+
+		$file = Request::file('file');
+		$destinationPath = public_path().'/uploads/user/profile_pic';
+		// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
+		$filename = str_random(12);
+		//$filename = $file->getClientOriginalName();
+		//$extension =$file->getClientOriginalExtension(); 
+		$user_id = Auth::id();
+		$upload_success = Request::file('file')->move($destinationPath, $filename);
+
+		if( $upload_success ){
+			return User::create([
+				'name' => $data['name'],
+				'email' => $data['email'],
+				'password' => bcrypt($data['password']),
+				'username' => $data['username'],
+				'birthday' => $data['birthday'],
+				'weight' => $data['weight'],
+				'about' => $data['about'],
+				'avatar' => $filename,
+			]);
+		}else{
+			return redirect()->back()->withErrors($validation->errors());
+		}
 	}
 
 }

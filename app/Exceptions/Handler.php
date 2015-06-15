@@ -2,6 +2,7 @@
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class Handler extends ExceptionHandler {
 
@@ -38,5 +39,12 @@ class Handler extends ExceptionHandler {
 	{
 		return parent::render($request, $e);
 	}
+
+
+
+	/*App::error(function(ModelNotFoundException $e)
+	{
+	    return Response::make('Not Found', 404);
+	});*/
 
 }

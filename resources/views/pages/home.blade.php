@@ -12,23 +12,24 @@
 						<div class='row'>
 							<div class='col-xs-12'>
 								<div class='row'>
-									<div class='col-xs-12 col-md-2'>
+									<div class='col-xs-12 col-md-2 content'>
 										<div class='row'>
 											<div class='col-xs-12'>
-												<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">	
+												@if(isset(Auth::user()->avatar))
+												<img src="{{ URL::asset('uploads/user/profile_pic').'/'.Auth::user()->avatar }}" alt='profile-picture' class="img-responsive">	
+												@else
+												<img src="{{ URL::asset('img/default-pic.png')}}" alt='profile-picture' class="img-responsive">
+												@endif
 											</div>
 										</div>
 										<ul class="nav nav-pills nav-stacked">
-											<li><a href="{{URL::to('/profile')}}/user_id={{Auth::user()->id }}">Profile</a></li>
-										    <li><a href="{{URL::to('/gallery')}}/user_id={{Auth::user()->id }}">Photo Gallery</a></li>
+											<li><a href="{{url('/profile')}}/user_id={{Auth::user()->id }}">Profile</a></li>
+										    <li><a href="{{url('/gallery')}}/user_id={{Auth::user()->id }}">Photo Gallery</a></li>
 										    <hr/>
-										    <li><a href="{{URL::to('/journal')}}/user_id={{Auth::user()->id }}">Journal</a></li>
-										    <li><a href="#">Body Goals</a></li>
-										    <li><a href="#">Body Journey</a></li>
-										    <li><a href="#">Workout Plan</a></li>
+										    <li><a href="{{url('/journal')}}/user_id={{Auth::user()->id }}">Journal</a></li>
 										</ul>
 									</div>
-									<div class='col-xs-12 col-md-10'>
+									<div class='col-xs-12 col-md-10 content'>
 										<div class='row'>
 											<div class='col-xs-12'>
 												<h3 class='text-center'> Body Journey <small> Push Yourself! </small></h3>
@@ -46,19 +47,111 @@
 													</div>
 												</div>
 												<div class='row'>
-													<div class='col-xs-12'>
-													<div class='col-xs-4 pad-none'>
-														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
-													</div>
-													<div class='col-xs-4 pad-none'>
-														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
-													</div>
-													<div class='col-xs-4 pad-none'>
-														<img src="http://placehold.it/600x600" alt='profile-picture' class="img-responsive">
+
+													<!--START OF PROGRESS BANNER-->
+													<div class='col-xs-12' id='progress-banner'>
+														<div class='col-xs-12 col-md-4 content'>
+															<!--IF USER HAS BEFORE PIC-->
+															@if(isset($before))
+															<div class='row bottom-margin'>
+																<img src="{{URL::asset('uploads/user/progress').'/'.$before->file}}" alt='before-picture' class="img-responsive">
+															</div>
+															<div class='row bottom-margin'>
+																<div class='col-xs-12 text-center'>
+																	<a class='btn btn-primary btn-block' href='#' role="button">Update Before Picture</a>
+																</div>
+															</div>
+															@else
+															<!--IF USER HAS BEFORE PIC END-->
+															
+															<!--IF USER DOES NOT HAVE BEFORE PIC-->
+															<div class="dropdown">
+															<button class="btn btn-primary btn-block dropdown-toggle" id="upBefore" type='button' data-toggle="dropdown" aria-haspopup="true">Upload Before Picture</button>
+															<!--Hide/Show Form for before picture-->
+															<ul class='dropdown-menu content' role='menu' aria-labelledby='upBefore'>
+																<hr/>
+																<!--Error Display-->
+																@if (count($errors) > 0)
+																<div class="alert alert-danger">
+																	<strong>Whoops!</strong> There were some problems with your input.<br><br>
+																	<ul>
+																		@foreach ($errors->all() as $error)
+																			<li>{{ $error }}</li>
+																		@endforeach
+																	</ul>
+																</div>
+																@endif
+																<!--Error Display End-->
+																<form id='before-form' method="POST" enctype="multipart/form-data" action="{{ url('before/uploads') }}">	
+																	<input type="hidden" name="_token" value="{{ csrf_token() }}">
+																	<div class="form-group">
+																		<label>Before Picture</label>
+																		<div>
+																			<input type="file" class="form-control" name="file" value="{{ old('file') }}">
+																		</div>
+																	</div>
+																	<div class="form-group">
+																	    <label for="weight">Weight</label>
+																	    <input type="number" class="form-control" id="weight" name='weight' placeholder="Enter Weight">
+																	</div>
+																    <button type="submit" class="btn btn-primary">Add</button>
+																</form>
+															</div>
+															</ul>
+															@endif
+															<!--IF USER DOES NOT HAVE BEFORE PIC END--> 
+														</div>
+														<div class='col-xs-12 col-md-4 content'>
+															<img src="{{URL::asset('img/logo.png')}}" alt='logo-picture' class="img-responsive">
+														</div>
+														<div class='col-xs-12 col-md-4 content'>
+															<!--IF USER HAS PROGRESS PIC-->
+															@if(isset($progress))
+															<img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='ba-picture' class="img-responsive">
+															<div class='row bottom-margin'>
+															</div>
+															@endif
+															<!--IF USER HAS PROGRESS PIC END-->
+															
+															<!--IF USER DOES NOT HAVE PROGRESS PIC-->
+															<div class="dropdown">
+															<button class="btn btn-primary btn-block dropdown-toggle" id="upBefore" type='button' data-toggle="dropdown" aria-haspopup="true">Add Progress Picture</button>
+															<!--Hide/Show Form for before picture-->
+															<ul class='dropdown-menu content' role='menu' aria-labelledby='upBefore'>
+																<hr/>
+																<!--Error Display-->
+																@if (count($errors) > 0)
+																<div class="alert alert-danger">
+																	<strong>Whoops!</strong> There were some problems with your input.<br><br>
+																	<ul>
+																		@foreach ($errors->all() as $error)
+																			<li>{{ $error }}</li>
+																		@endforeach
+																	</ul>
+																</div>
+																@endif
+																<!--Error Display End-->
+																<form id='progress-form' method="POST" enctype="multipart/form-data" action="{{ url('progress/uploads') }}">	
+															<input type="hidden" name="_token" value="{{ csrf_token() }}">
+															<div class="form-group">
+																<label>Progress Picture</label>
+																<div>
+																	<input type="file" class="form-control" name="file" value="{{ old('file') }}">
+																</div>
+															</div>
+															<div class="form-group">
+															    <label for="weight">Weight</label>
+															    <input type="number" class="form-control" id="weight" name='weight' placeholder="Enter Weight">
+															</div>
+														    <button type="submit" class="btn btn-primary">Add</button>
+														</form>
+															</div>
+															</ul>
+															<!--IF USER DOES NOT HAVE PROGRESS PIC END--> 
+														</div>
 													</div>
 												</div>
-												</div>
-												<div class='row'>
+												<div class='row bottom-margin'>
 													<div class='col-xs-12 text-center'>
 														<a href='#'>View Your Journey</a>
 													</div>

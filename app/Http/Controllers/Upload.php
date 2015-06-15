@@ -1,15 +1,22 @@
 <?php namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use Intervention\Image\ImageManager\Make;
 use Input;
 use Validator;
 use Request;
 use Session;
 use DB;
+use Redirect;
 use Auth;
+use App\Before;
+use App\Progress;
+
+
 class Upload extends Controller {
-	public function index(){
+		public function getDates()
+	{
+	    return ['created_at'];
 	}
+	
 	public function userGallery() {
 	$file = Request::file('file');
 	$destinationPath = public_path().'/uploads/user/photo_gallery';
@@ -33,22 +40,63 @@ class Upload extends Controller {
 
 
 	public function userJournal() {
-		return(Request::all());
-		/*
-		Validator::make($data, [
-			'name' => 'required|max:255',
-			'email' => 'required|email|max:255|unique:users|confirmed',
-			'password' => 'required|confirmed|min:6',
-			'username' => 'required|max:255|unique:users',
-			'birthday' => 'required',
-			'weight' => 'required|max:3',
-			'about' => 'max:300',
-		]);
-	*/
-		/*
-		DB::table('journal')->insert(
-    	array('name' => $data['name'], 'user_id' => $data['user_id'],'content' => $data['content'],'date' => $data['date']);
-		);
-		*/
+		$user_id = Auth::id();
+		$data = Request::all();
+		$validation = Journal::validate($data);
+		if ($validation->fails())
+		{
+		 	return redirect()->back()->withErrors($validation->errors());
+		}
+		if(isset($data['private'])){
+			$data['private'] = 0;
+		}else{
+			$data['private'] = 1;
+		}
+		Journal::create(array('name' => $data['name'],'content' => $data['content'], 'user_id' => $user_id, 'visible' => $data['private']));
+		return Redirect::back();
+		
+	}
+
+	public function postBefore() {
+		$user_id = Auth::id();
+		$data = Request::all();
+		$validation = Before::validate($data);
+		if ($validation->fails())
+		{
+		 	return redirect()->back()->withErrors($validation->errors());
+		}
+
+
+		$file = Request::file('file');
+		$destinationPath = public_path().'/uploads/user/progress';
+		// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
+		$filename = str_random(12);
+		//$filename = $file->getClientOriginalName();
+		//$extension =$file->getClientOriginalExtension(); 
+		$upload_success = Request::file('file')->move($destinationPath, $filename);
+		Before::create(array('file' => $filename,'user_id' => $user_id,'weight' => $data['weight']));
+		return Redirect::back();
+		
+	}
+	public function postProgress() {
+		$user_id = Auth::id();
+		$data = Request::all();
+		$validation = Progress::validate($data);
+		if ($validation->fails())
+		{
+		 	return redirect()->back()->withErrors($validation->errors());
+		}
+
+
+		$file = Request::file('file');
+		$destinationPath = public_path().'/uploads/user/progress';
+		// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
+		$filename = str_random(12);
+		//$filename = $file->getClientOriginalName();
+		//$extension =$file->getClientOriginalExtension(); 
+		$upload_success = Request::file('file')->move($destinationPath, $filename);
+		Progress::create(array('file' => $filename,'user_id' => $user_id,'weight' => $data['weight']));
+		return Redirect::back();
+		
 	}
 }

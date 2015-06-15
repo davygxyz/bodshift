@@ -21,5 +21,13 @@ class Delete extends Controller {
 	}
 
 
+	public function journal($id){
+		$user_id = Auth::id();
+		DB::table('journal')->where('id', $id)->delete();
+
+		return Redirect::back();
+
+	}
+
 
 }

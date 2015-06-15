@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bodshift | 
+	<title>Bodshift | {{ $title or 'You are in control of your own body!' }}
 	</title>
 	<!-- Google Font -->
 	<link href='http://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
@@ -95,8 +95,6 @@
 		</div>
 	</div>
 	@yield('footer')
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="{{ URL::asset('js/dropzone.js') }}"></script>
 	<script src="{{ URL::asset('js/lightbox.min.js') }}"></script>
 	<script src="{{ URL::asset('js/script.js') }}"></script>

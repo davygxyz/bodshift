@@ -26,6 +26,10 @@ Route::get('profile/user_id={id}', 'PagesController@profile');
 Route::get('journal/user_id={id}', 'PagesController@journal');
 
 Route::post('journal/uploads', 'Upload@userJournal');
+Route::get('journal/delete/journal_id={id}', 'Delete@journal');
+
+Route::post('before/uploads', 'Upload@postBefore');
+Route::post('progress/uploads', 'Upload@postProgress');
 
 //Gallery Routes
 Route::get('gallery/user_id={id}', 'PagesController@photo_gallery');

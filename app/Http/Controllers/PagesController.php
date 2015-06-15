@@ -6,6 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use App\Journal;
+use View;
+use App\Before;
+use App\Progress;
+use App\User;
 class PagesController extends Controller {
 
 	/**
@@ -19,7 +24,17 @@ class PagesController extends Controller {
 	public function index()
 	{
 		$title = "Home";
-		return view("pages.home",['title' => $title]);
+		if (Auth::check()) {
+			$before_query = Before::where('user_id', '=', Auth::user()->id)->first();
+			$progress_pic = Progress::where('user_id', '=', Auth::user()->id)->orderBy('id','DESC')->first();
+		}else{
+			return view("pages.home")
+			->with('title',$title);
+		}
+		return view("pages.home")
+		->with('title',$title)
+		->with('before',$before_query)
+		->with('progress',$progress_pic);
 	}
 
 	public function about()
@@ -51,11 +66,15 @@ class PagesController extends Controller {
 
 	public function profile($id)
 	{
-		$user_info = DB::select('select * from users where id = ?', [$id]);
+		$user_info = User::find(16);
 		$user_gallery = DB::table('gallery_images')->where('user_id',$id)->take(12)->get();
-		$user_info = $user_info[0];
 		$data = array('info' => $user_info, 'gallery' => $user_gallery);
-		return view("pages.profile",compact('data'));
+		$progress_pic = Progress::where('user_id', '=', $id)->orderBy('id','ASC')->get();
+		return view("pages.profile")
+			->with('info',$user_info)
+			->with('user_gallery',$user_gallery)
+			->with('progress_pic',$progress_pic)
+			->with('title','Profile of '.Auth::user()->username);
 	}
 
 	public function photo_gallery($id)
@@ -77,9 +96,19 @@ class PagesController extends Controller {
 	public function journal($id)
 	{
 		$title = "Journal";
-		$user_journal = DB::table('journal')->where('user_id',$id)->get();
-		$data = array( 'title' => $title, 'id' => $id, 'journal' => $user_journal);
-		return view("pages.journal",compact('data'));
+		//$user_journal = DB::table('journal')->where('user_id',$id)->orderBy('created_at', 'id', 'desc')->paginate(5);
+		if(Auth::user()->id == $id)
+		{
+			$user_journal = Journal::where('user_id', '=', $id)->get();
+		}
+		else
+		{
+			$user_journal = Journal::where('user_id', '=', $id)->where('visible', '=', 1)->get();
+		}
+		return View::make("pages.journal")
+			->with('title', 'Journal')
+			->with('user_id', $id)
+			->with('journal', $user_journal);
 	}
 
 }
