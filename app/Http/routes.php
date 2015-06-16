@@ -28,6 +28,8 @@ Route::get('journal/user_id={id}', 'PagesController@journal');
 Route::post('journal/uploads', 'Upload@userJournal');
 Route::get('journal/delete/journal_id={id}', 'Delete@journal');
 
+route::post('before/update', 'Update@postbefore');
+
 Route::post('before/uploads', 'Upload@postBefore');
 Route::post('progress/uploads', 'Upload@postProgress');
 
