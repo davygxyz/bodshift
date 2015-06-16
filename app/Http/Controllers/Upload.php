@@ -9,6 +9,8 @@ use Redirect;
 use Auth;
 use App\Before;
 use App\Progress;
+use App\Journal;
+
 
 
 class Upload extends Controller {
