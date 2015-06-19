@@ -26,7 +26,7 @@
 		<div class='row'>
 			<div class='col-xs-12' id='site-wrapper'>
 				<!--Site Banner Header Start-->
-				<div class='row'>
+				<div class='row hidden-sm hidden-xs'>
 					<div class='col-xs-12' id='header-banner'>
 						
 					</div>

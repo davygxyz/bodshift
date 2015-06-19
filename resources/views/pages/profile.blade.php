@@ -75,7 +75,6 @@
 				        <div class='progress-pic' style='margin-top:24px'>
 				        	<img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='journey Phots' class="img-responsive">
 							<div class='small-12 columns text-centered'>Weight: {{$progress->weight}}</div>
-							<div class='small-12 columns text-centered'>gjdffggjf</div>
 				        </div>
 				        @endforeach
 					</div>

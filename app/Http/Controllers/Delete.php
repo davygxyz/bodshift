@@ -10,6 +10,9 @@ use Request;
 use Session;
 use DB;
 use Auth;
+use App\Before;
+use App\Progress;
+use App\User;
 class Delete extends Controller {
 
 	public function galleryImage($id){
@@ -24,9 +27,18 @@ class Delete extends Controller {
 	public function journal($id){
 		$user_id = Auth::id();
 		DB::table('journal')->where('id', $id)->delete();
-
 		return Redirect::back();
 
+	}
+
+	public function progress($id){
+		Progress::where('id','=',$id)->delete();
+		return Redirect::back();
+	}
+
+	public function before($id){
+		Before::where('id','=',$id)->delete();
+		return Redirect::back();
 	}
 
 

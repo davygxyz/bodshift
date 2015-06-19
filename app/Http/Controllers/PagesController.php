@@ -55,6 +55,17 @@ class PagesController extends Controller {
 		return view("pages.contactus",['title' => $title]);
 	}
 
+	public function progress()
+	{
+		$user_id = Auth::user()->id;
+		$progress_pic = Progress::where('user_id', '=', $user_id)->get();
+		$before_pic = Before::where('user_id', '=', $user_id)->first();
+		return view("pages.progress")
+		->with('title', 'Progress')
+		->with('progress_pic', $progress_pic)
+		->with('before_pic', $before_pic);
+	}
+
 	public function motivation()
 	{
 		$video_query = DB::table('mot_videos')->paginate(3);

@@ -44,7 +44,7 @@
 									<!--SECTION TITLE-->
 									<div class='row'>
 										<div class='col-xs-12'>
-											<h3 class='text-center'> Body Journey <small> Push Yourself! </small></h3>
+											<h3 class='text-center'> Body Progress <small> Push Yourself! </small></h3>
 											<hr />
 										</div>
 									</div>
@@ -203,7 +203,7 @@
 											<!--VIEW USER PROGRESS LINK-->
 											<div class='row bottom-margin'>
 												<div class='col-xs-12 text-center'>
-													<a href='#'>View Your Journey</a>
+													<a href="{{url('/progress')}}">View Your Progress</a>
 												</div>
 											</div>
 											<!--****VIEW USER PROGRESS LINK END****-->

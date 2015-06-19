@@ -1,3 +1,9 @@
+//===== Delete Modal =====
+
+
+
+//===== Delete Modal End =====
+
 //===== DROPZONE CONFIGURATION =====
 
 Dropzone.options.myAwesomeDropzone = {

@@ -21,6 +21,10 @@ Route::get('contact', 'PagesController@contactus');
 
 Route::get('motivation', 'PagesController@motivation');
 
+Route::get('progress', 'PagesController@progress');
+Route::post('progress/uploads', 'Upload@postProgress');
+Route::get('progress/delete/id={id}','Delete@progress');
+
 Route::get('profile/user_id={id}', 'PagesController@profile');
 
 Route::get('journal/user_id={id}', 'PagesController@journal');
@@ -28,10 +32,10 @@ Route::get('journal/user_id={id}', 'PagesController@journal');
 Route::post('journal/uploads', 'Upload@userJournal');
 Route::get('journal/delete/journal_id={id}', 'Delete@journal');
 
-route::post('before/update', 'Update@postbefore');
-
+Route::post('before/update', 'Update@postbefore');
 Route::post('before/uploads', 'Upload@postBefore');
-Route::post('progress/uploads', 'Upload@postProgress');
+Route::get('before/delete/id={id}','Delete@before');
+
 
 //Gallery Routes
 Route::get('gallery/user_id={id}', 'PagesController@photo_gallery');
