@@ -11,6 +11,7 @@ use View;
 use App\Before;
 use App\Progress;
 use App\User;
+use Redirect;
 class PagesController extends Controller {
 
 	/**
@@ -23,18 +24,22 @@ class PagesController extends Controller {
 
 	public function index()
 	{
+
+		$allUsers =  User::orderByRaw('RAND()')->take(12)->get();
 		$title = "Home";
 		if (Auth::check()) {
 			$before_query = Before::where('user_id', '=', Auth::user()->id)->first();
 			$progress_pic = Progress::where('user_id', '=', Auth::user()->id)->orderBy('id','DESC')->first();
 		}else{
 			return view("pages.home")
-			->with('title',$title);
+			->with('title',$title)
+			->with('allUsers',$allUsers);
 		}
 		return view("pages.home")
 		->with('title',$title)
 		->with('before',$before_query)
-		->with('progress',$progress_pic);
+		->with('progress',$progress_pic)
+		->with('allUsers',$allUsers);
 	}
 
 	public function about()
@@ -77,7 +82,10 @@ class PagesController extends Controller {
 
 	public function profile($id)
 	{
-		$user_info = User::find(16);
+		if (Auth::guest()){
+			return Redirect::to('/auth/login');
+		}
+		$user_info = User::find($id);
 		$user_gallery = DB::table('gallery_images')->where('user_id',$id)->take(12)->get();
 		$data = array('info' => $user_info, 'gallery' => $user_gallery);
 		$progress_pic = Progress::where('user_id', '=', $id)->orderBy('id','ASC')->get();
@@ -91,35 +99,34 @@ class PagesController extends Controller {
 	public function photo_gallery($id)
 	{
 		$user_gallery = DB::table('gallery_images')->where('user_id',$id)->get();
-		$title = "Gallery";
-
-		// If the gallery is not current users, it will show the 'GET' users profile.
-		/*if($id != $logged_in){
-			$user_info = DB::select('select * from users where id = ?', [$id]);
-			$user_info = $user_info[0];
-			return view("pages.profile",['user_info' => $user_info]);
-		}*/
-
-		$data = array('query' => $user_gallery, 'title' => $title, 'id' => $id);
-		return view("pages.photo_gallery",compact('data'));
+		$user_info = USER::where('id','=',$id)->first();
+		return view("pages.photo_gallery")
+		->with('title',"$user_info->username Gallery")
+		->with('user_id',$id)
+		->with('query', $user_gallery)
+		->with('user_info', $user_info);
 	}
 
 	public function journal($id)
 	{
-		$title = "Journal";
-		//$user_journal = DB::table('journal')->where('user_id',$id)->orderBy('created_at', 'id', 'desc')->paginate(5);
+		$user_info = USER::where('id','=',$id)->first();
 		if(Auth::user()->id == $id)
 		{
-			$user_journal = Journal::where('user_id', '=', $id)->get();
+			$user_journal = Journal::where('user_id', '=', $id)
+			->orderBy('id','DESC')
+			->get();
 		}
 		else
 		{
-			$user_journal = Journal::where('user_id', '=', $id)->where('visible', '=', 1)->get();
+			$user_journal = Journal::where('user_id', '=', $id)->where('visible', '=', 1)
+			->orderBy('id','DESC')
+			->get();
 		}
 		return View::make("pages.journal")
 			->with('title', 'Journal')
 			->with('user_id', $id)
-			->with('journal', $user_journal);
+			->with('journal', $user_journal)
+			->with('user_info', $user_info);
 	}
 
 }

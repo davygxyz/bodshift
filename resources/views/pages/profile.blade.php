@@ -3,10 +3,8 @@
 @section('content')
 <div class='row'>
 	<div class='col-xs-12 col-md-3'>
-		<div class='row'>
-			<div class='col-xs-12 bottom-margin'>
-				<a href="{{URL::to('/')}}" class=' btn btn-block'>Back to Home</a>
-			</div>
+		<div class='col-xs-12 content'>
+			<a href="{{url('/')}}"><span class='glyphicon glyphicon-home' aria-hidden='true'></span> Back Home</a>
 		</div>
 		<div class='row'>
 			<div class='col-xs-12'>
@@ -18,12 +16,12 @@
 			</div>
 		</div>
 		<div class='row'>
-			<div class='col-xs-12'>
+			<div class='col-xs-12 content'>
 				<ul class="nav nav-pills nav-stacked">
 
 				    <li>Name: {{$info->name}} </li>
 				    <li>Email: {{$info->email}} </li>
-				    <li>Age:<span id='age-js'> {{$info->birthday}}</span></li>
+				    <li>Age: {{Carbon\Carbon::createFromDate()->age}}</span></li>
 				    <li>Height: {{$info->height}}</li>
 				    <li>Weight: {{$info->weight}}</li>
 				    <li>Member Since: {{ date("m/d/Y",strtotime($info->created_at)) }}</li>
@@ -82,7 +80,7 @@
 			</div>
 		</div>
 		<div class='row'>
-			<h3 class='text-center'> Gallery</h3>
+			<h3 class='text-center'>Gallery</h3>
 			<?php $c=0; ?>
 			@foreach ($user_gallery as $gallery)
 			<div class='col-xs-3 col-md-2 bottom-margin'>
@@ -93,6 +91,10 @@
 					<div class="clearfix visible-lg-block"></div>
 				@endif
 			@endforeach
+		</div>
+		<div class='row'>
+			<h3 class='text-center'>Journal</h3>
+			
 		</div>
 	</div>
 </div>

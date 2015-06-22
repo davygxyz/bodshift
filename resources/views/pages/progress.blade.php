@@ -10,6 +10,13 @@
 		<h3 class='text-center'>Your body Progress</h3>
 	</div>
 </div>
+@if(count($progress_pic) == 0 AND count($before_pic) == 0)
+<div class='row'>
+	<div class='col-xs-12'>
+		<h4 class='text-center'>-No Body Progress Available-</h4>
+	</div>
+</div>
+@else
 <div class='row'>
 	<div class='col-xs-12' id='trans-scroll'>
 		<div class='slider'>
@@ -40,4 +47,5 @@
 		</div>
 	</div>
 </div>
+@endif
 @stop

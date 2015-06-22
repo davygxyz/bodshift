@@ -277,40 +277,34 @@
 	<!--MOTIVATIONAL BANNER END-->
 	<!--NEW USER PANEL-->
 	<div class='row bottom-margin' id='new-usr'>
-	  	<div class='col-sm-12'>
+	  	<div class='col-xs-12'>
 	  		<div class='row'>
-	  			<div class='col-sm-7'>
+	  			<div class='col-xs-12'>
 	  				<div class='row'>
-	  					<div class='col-sm-12' id='sec-title'>
+	  					<div class='col-xs-12 content' id='sec-title'>
 	  						<h3>New Users</h3>
 	  						<hr />
 	  					</div>
 	  				</div>
 	  				<div class='row'>
-	  					<div class='col-sm-12 col-lg-3 home-pics'>
-	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
-	  						<div class='nu-link'><a href='#'>View Profile</a></div>
+	  					<?php $c=0; ?>
+	  					@foreach($allUsers as $user)
+	  					<?php $c++; ?>
+	  					<div class='col-sm-12 col-lg-2 home-pics'>
+	  						<h4 class = 'text-center'>{{$user->username}}</h4>
+	  						@if(isset($user->avatar))
+							<img src="{{ URL::asset('uploads/user/profile_pic').'/'.$user->avatar }}" alt='profile-picture' class="img-responsive">	
+							@else
+							<img src="{{ URL::asset('img/default-pic.png')}}" alt='profile-picture' class="img-responsive">
+							@endif
+	  						<div class='nu-link'><a href="{{url('/profile')}}/user_id={{$user->id }}">View Profile</a></div>
 	  					</div>
-	  					<div class='col-sm-12 col-lg-3 home-pics'>
-	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
-	  						<div class='nu-link'><a href='#'>View Profile</a></div>
-	  					</div>
-	  					<div class='col-sm-12 col-lg-3 home-pics'>
-	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
-	  						<div class='nu-link'><a href='#'>View Profile</a></div>
-	  					</div>
-	  					<div class='col-sm-12 col-lg-3 home-pics'>
-	  						<img src="http://placehold.it/960x600" alt='new-usr-photo' class="img-responsive">
-	  						<div class='nu-link'><a href='#'>View Profile</a></div>
-	  					</div>
+	  					@if($c % 6 == 0 )
+						<div class="clearfix visible-lg-block visible-md-block"></div>
+						@endif
+
+	  					@endforeach
 	  				</div>
-	  			</div>
-	  			<div class='col-sm-5'>
-	  				<div class='row'>
-	  					<div class='col-sm-12'>
-	  						<img src="http://placehold.it/600x200" alt='ad-space-right' class="img-responsive">
-	  					</div>
-	  				</div>	
 	  			</div>
 	  		</div>
 	  	</div>

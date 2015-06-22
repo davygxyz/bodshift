@@ -2,17 +2,22 @@
 @section('content')
 <div class='row'>
 	<div class='col-sx-12'>
+		<!--Redirecting Links-->
+		<div class='row'>
+			<div class='col-xs-12 content'>
+				<a href="{{url('/')}}"><span class='glyphicon glyphicon-home' aria-hidden='true'></span> Back Home</a>
+			</div>
+			@if(Auth::user()->id != $user_id)
+			<div class='col-xs-12 content'>
+				<a href="{{url('/profile/user_id=').$user_info->id}}"><span class='glyphicon glyphicon-user' aria-hidden='true'></span> {{$user_info->username}}'s Profile</a>
+			</div>
+			@endif
+		</div>
+		<!--Redirecting Links END-->
 		<div class='row'>
 			<!--User authentification, below does not show unless it is the right users journal-->
 			@if(Auth::user()->id == $user_id)
 			<div class='col-xs-12 col-md-4'>
-				<!--Redirecting Links-->
-				<div class='row'>
-					<div class='col-xs-12 bottom-margin padding-5'>
-						<a href="{{URL::to('/')}}" class=' btn btn-block'>Back to Home</a>
-					</div>
-				</div>
-				<!--Redirecting Links END-->
 				<div class='row'>
 					<div class='col-xs-12 bottom-margin padding-5'>
 						<!--Form Title-->
@@ -52,13 +57,6 @@
 						<!--Form End-->
 					</div>
 				</div>
-				<!--Ad Space-->	
-				<div class='row'>
-					<div class='col-xs-12'>
-						<img src="http://placehold.it/300x700" alt='profile-picture' class="img-responsive">
-					</div>
-				</div>
-				<!--Ad Space End-->	
 			</div>
 			<!--Divs change length due to user Authentification-->
 			<div class='col-xs-12 col-md-8 content'>
