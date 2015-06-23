@@ -85,6 +85,8 @@ class PagesController extends Controller {
 		if (Auth::guest()){
 			return Redirect::to('/auth/login');
 		}
+		$journals = Journal::where('user_id', '=', $id)->where('visible', '=', 1)->first();
+		$before_query = Before::where('user_id', '=', $id)->first();
 		$user_info = User::find($id);
 		$user_gallery = DB::table('gallery_images')->where('user_id',$id)->take(12)->get();
 		$data = array('info' => $user_info, 'gallery' => $user_gallery);
@@ -93,6 +95,8 @@ class PagesController extends Controller {
 			->with('info',$user_info)
 			->with('user_gallery',$user_gallery)
 			->with('progress_pic',$progress_pic)
+			->with('before_pic', $before_query)
+			->with('journals', $journals)
 			->with('title','Profile of '.Auth::user()->username);
 	}
 

@@ -73,9 +73,8 @@
 						<?php $c++; ?>
 						<div class="panel panel-default">
 						  <div class="panel-heading">
-						    <h3 class="panel-title" style='word-wrap: break-word; padding-right:15px;'>{{$journal->name}}
+						    <h3 class="panel-title" style='word-wrap: break-word; padding-right:15px;'>{{$journal->name}}</h3>
 						    	@if($journal->user_id == Auth::user()->id)
-						    </h3>
 									<a href="{{ URL::to('/journal/delete/journal_id='.$journal->id)}} " style='position:absolute; top:15px; right:20px;'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 								@endif
 						  </div>

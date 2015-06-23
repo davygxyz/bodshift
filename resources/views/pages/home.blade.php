@@ -223,8 +223,8 @@
 
 
 	<!--CAROUSEL-->
-	<div class='row bottom-margin' id="home-carousel">
-		<div class='col-sm-12 hidden-sm hidden-xs'>
+	<div class='row bottom-margin hidden-sm hidden-xs' id="home-carousel">
+		<div class='col-sm-12'>
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
@@ -281,16 +281,16 @@
 	  		<div class='row'>
 	  			<div class='col-xs-12'>
 	  				<div class='row'>
-	  					<div class='col-xs-12 content' id='sec-title'>
+	  					<div class='col-xs-12 content hidden-sm hidden-xs' id='sec-title'>
 	  						<h3>New Users</h3>
 	  						<hr />
 	  					</div>
 	  				</div>
-	  				<div class='row'>
+	  				<div class='row hidden-sm hidden-xs'>
 	  					<?php $c=0; ?>
 	  					@foreach($allUsers as $user)
 	  					<?php $c++; ?>
-	  					<div class='col-sm-12 col-lg-2 home-pics'>
+	  					<div class='col-xs-2 home-pics'>
 	  						<h4 class = 'text-center'>{{$user->username}}</h4>
 	  						@if(isset($user->avatar))
 							<img src="{{ URL::asset('uploads/user/profile_pic').'/'.$user->avatar }}" alt='profile-picture' class="img-responsive">	

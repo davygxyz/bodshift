@@ -6,6 +6,10 @@ hr{
     margin-bottom:5px !important;
     margin-top:5px !important;
 }
+.color{
+    color:#003c51;
+    font-weight: bold;
+}
 .img-responsive {
     margin: 0 auto;
 }
