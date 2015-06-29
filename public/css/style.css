@@ -10,6 +10,10 @@ hr{
     color:#003c51;
     font-weight: bold;
 }
+textarea[name='feedpost']{
+    resize: none;
+}
+
 .img-responsive {
     margin: 0 auto;
 }
@@ -235,7 +239,22 @@ img[alt='ad-space-right']{
     right: 0;
 }
 
+#feed-drop-menu{
+    position: relative;
+    padding:5px;
+}
 
+#feed-wrapper{
+    background-color: #F2F2F2;
+}
+#feed-panel{
+    background-color: white !important;
+    min-height:100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
 /*===== MEDIA QUERY =====*/
 /* Extra small devices (phones, less than 768px) */

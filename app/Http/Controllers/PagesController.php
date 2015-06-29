@@ -11,7 +11,9 @@ use View;
 use App\Before;
 use App\Progress;
 use App\User;
+use App\Height;
 use Redirect;
+use App\Newsfeed;
 class PagesController extends Controller {
 
 	/**
@@ -24,7 +26,6 @@ class PagesController extends Controller {
 
 	public function index()
 	{
-
 		$allUsers =  User::orderByRaw('RAND()')->take(12)->get();
 		$title = "Home";
 		if (Auth::check()) {
@@ -82,6 +83,11 @@ class PagesController extends Controller {
 
 	public function profile($id)
 	{
+		$newsfeed = DB::table('news_feed')
+					->where('user_id','=',$id)
+					->join('comment','news_feed.id','=','comment.newsfeed_id')
+					->join('users','comment.sending_id','=','users.id')
+					->get();
 		if (Auth::guest()){
 			return Redirect::to('/auth/login');
 		}
@@ -97,6 +103,7 @@ class PagesController extends Controller {
 			->with('progress_pic',$progress_pic)
 			->with('before_pic', $before_query)
 			->with('journals', $journals)
+			->with('newsfeed', $newsfeed)
 			->with('title','Profile of '.Auth::user()->username);
 	}
 

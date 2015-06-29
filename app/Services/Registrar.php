@@ -5,6 +5,7 @@ use Validator;
 use Request;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 use Auth;
+use App\Height;
 
 class Registrar implements RegistrarContract {
 
@@ -23,7 +24,7 @@ class Registrar implements RegistrarContract {
 			'username' => 'required|max:255|unique:users',
 			'birthday' => 'required',
 			'weight' => 'required|max:3',
-			'about' => 'max:300',
+			'about' => 'max:500',
 			'file' => 'max:10000|mimes:jpeg,png,gif,jpg'
 		]);
 	}
@@ -58,6 +59,8 @@ class Registrar implements RegistrarContract {
 				'weight' => $data['weight'],
 				'about' => $data['about'],
 				'avatar' => $filename,
+				'ft' => $data['ft'],
+				'inch' => $data['inch'],
 			]);
 		}else{
 			return redirect()->back()->withErrors($validation->errors());

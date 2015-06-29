@@ -45,6 +45,9 @@ Route::post('gallery/uploads', 'Upload@userGallery');
 Route::get('gallery/delete/image_id={id}', 'Delete@galleryImage');
 
 
+Route::post('create/post', 'Create@postComment');
+
+
 
 
 

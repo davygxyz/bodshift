@@ -17,7 +17,7 @@
 						<div class='col-xs-12'>
 							<div class='row'>
 								<!--LEFT SIDE-->
-								<div class='col-xs-12 col-md-2 content'>
+								<div class='col-xs-4 col-md-2 content'>
 									<!--USER AVATAR-->
 									<div class='row'>
 										<div class='col-xs-12'>
@@ -40,7 +40,7 @@
 								</div>
 								<!--****LEFT SIDE END****-->
 								<!--****RIGHT SIDE-->
-								<div class='col-xs-12 col-md-10 content'>
+								<div class='col-xs-8 col-md-10 content'>
 									<!--SECTION TITLE-->
 									<div class='row'>
 										<div class='col-xs-12'>
@@ -51,20 +51,13 @@
 									<!--****SECTION TITLE END****-->
 									<div class='row'>
 										<div class='col-xs-12'>
-											<!--BEFORE AND AFTER HEADINGS-->
-											<div class='row bottom-margin'>
-												<div class='col-xs-12'>
-													<div class='row'>
-														<div class="col-md-4 text-center">Before</div>
-															<div class="col-md-4 col-md-offset-4 text-center">After</div>
-													</div>
-												</div>
-											</div>
-											<!--****BEFORE AND AFTER HEADINGS END****-->
 											<!--PROGRESS BANNER-->
 											<div class='row bottom-margin'>
 												<div class='col-xs-12' id='progress-banner'>
 													<div class='col-xs-12 col-md-4 content'>
+														<div class='row'>
+															<div class='col-xs-12'><h3 class='text-center'>Before</h3></div>
+														</div>
 														<!--IF USER HAS BEFORE PIC-->
 														@if(isset($before))
 														<!--BEFORE IMAGE-->
@@ -141,7 +134,11 @@
 																		    <label for="weight">Weight</label>
 																		    <input type="number" class="form-control" id="weight" name='weight' placeholder="Enter Weight">
 																		</div>
-																	    <button type="submit" class="btn btn-primary">Add</button>
+																		<div class="form-group">
+																		    <label for="weight">Date</label>
+																		    <input type="date" class="form-control" id="date" name='date'>
+																		</div>
+																	    <button type="submit" data-loading-text="Adding..." class="btn btn-primary">Add</button>
 																	</form>
 																</ul>
 															</div>
@@ -154,6 +151,9 @@
 														<img src="{{URL::asset('img/logo.png')}}" alt='logo-picture' class="img-responsive">
 													</div>
 													<div class='col-xs-12 col-md-4 content'>
+														<div class='row'>
+															<div class='col-xs-12'><h3 class='text-center'>After</h3></div>
+														</div>
 														<!--IF USER HAS PROGRESS PIC-->
 														@if(isset($progress))
 														<img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='ba-picture' class="img-responsive">
@@ -191,7 +191,11 @@
 																		    <label for="weight">Weight</label>
 																		    <input type="number" class="form-control" id="weight" name='weight' placeholder="Enter Weight">
 																		</div>
-																	    <button type="submit" class="btn btn-primary">Add</button>
+																		<div class="form-group">
+																		    <label for="weight">Date</label>
+																		    <input type="date" class="form-control" id="date" name='date'>
+																		</div>
+																	    <button type="submit" class="btn btn-primary loading-btn" data-loading-text="Adding...">Add</button>
 																	</form>
 																</ul>
 															<!--IF USER DOES NOT HAVE PROGRESS PIC END--> 

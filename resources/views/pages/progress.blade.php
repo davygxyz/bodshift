@@ -28,7 +28,7 @@
 		    	<div class='progress-pic' style='margin-top:24px'>
 		        	<img src="{{URL::asset('uploads/user/progress').'/'.$before_pic->file}}" alt='journey Phots' class="img-responsive">
 					<div class='small-12 columns text-centered'>Weight: {{$before_pic->weight}}</div>
-					<div class='small-12 columns text-centered'>Date: {{ date("m/d/Y",strtotime($before_pic->created_at)) }}</div>
+					<div class='small-12 columns text-centered'>Date: {{ date("m/d/Y",strtotime($before_pic->date)) }}</div>
 					<div class='small-12 columns text-centered'><a href='{{url("before/delete/id=").$before_pic->id}}' class='delete-alert'>Delete</a></div>
 		        </div>
 		        @endif
@@ -38,7 +38,7 @@
 		        <div class='progress-pic' style='margin-top:24px'>
 		        	<img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='journey Phots' class="img-responsive">
 					<div class='small-12 columns text-centered'>Weight: {{$progress->weight}}</div>
-					<div class='small-12 columns text-centered'>Date: {{ date("m/d/Y",strtotime($progress->created_at)) }}</div>
+					<div class='small-12 columns text-centered'>Date: {{ date("m/d/Y",strtotime($progress->datet)) }}</div>
 					<div class='small-12 columns text-centered'><a href='{{url("progress/delete/id=").$progress->id}}' class='delete-alert'>Delete</a></div>
 		        </div>
 		        @endforeach

@@ -83,7 +83,43 @@
 								<input type="number" class="form-control" name="weight" value="{{ old('weight') }}">
 							</div>
 						</div>
-
+						
+						<div class="form-group">
+							<label class="col-md-4 control-label">Height</label>
+							<div class="col-md-6">
+							<div class="col-xs-3 form-group">
+								<label class="col-md-4 control-label">ft</label>
+								<select class="form-control" name='ft'>
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								  <option>6</option>
+								  <option>7</option>
+								  <option>8</option>
+								</select>
+							</div>
+							<div class="col-xs-3 form-group">
+								<label class="col-md-4 control-label">inch</label>
+								<select class="form-control" name='inch'>
+									<option>0</option>
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								  <option>6</option>
+								  <option>7</option>
+								  <option>8</option>
+								  <option>9</option>
+								  <option>10</option>
+								  <option>11</option>
+								</select>
+							</div>
+							</div>
+						</div>
+						<div class='clearfix'></div>
 						<div class="form-group">
 							<label class="col-md-4 control-label">About Me</label>
 							<div class="col-md-6">
