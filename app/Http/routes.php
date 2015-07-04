@@ -15,6 +15,8 @@ Route::get('/', 'PagesController@index');
 
 Route::get('about', 'PagesController@about');
 
+Route::get('forum', 'PagesController@forum');
+
 Route::get('donate', 'PagesController@donate');
 
 Route::get('contact', 'PagesController@contactus');
@@ -44,14 +46,9 @@ Route::post('gallery/uploads', 'Upload@userGallery');
 
 Route::get('gallery/delete/image_id={id}', 'Delete@galleryImage');
 
+Route::get('user/transformations/{sex}/{slug}', 'PagesController@transformations');
 
-Route::post('create/post', 'Create@postComment');
-
-
-
-
-
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

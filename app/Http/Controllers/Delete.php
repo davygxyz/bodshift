@@ -17,6 +17,9 @@ class Delete extends Controller {
 
 	public function galleryImage($id){
 		$user_id = Auth::id();
+		$photo = DB::table('gallery_images')->where('id', $id)->first();
+		//$destinationPath = public_path().'/uploads/user/photo_gallery';
+		unlink(public_path().'/uploads/user/photo_gallery/'.$photo->file);
 		DB::table('gallery_images')->where('id', $id)->delete();
 
 		return Redirect::back();

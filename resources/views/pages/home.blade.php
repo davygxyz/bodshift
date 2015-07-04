@@ -156,7 +156,9 @@
 														</div>
 														<!--IF USER HAS PROGRESS PIC-->
 														@if(isset($progress))
+														<div class='row bottom-margin'>
 														<img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='ba-picture' class="img-responsive">
+														</div>
 														@endif
 														<!--IF USER HAS PROGRESS PIC END-->
 														
@@ -279,6 +281,62 @@
 		</div>
 	</div>
 	<!--MOTIVATIONAL BANNER END-->
+	<!--TRANSFORMATIONS-->
+	<div class='row' id='transformations'>
+	  	<div class='col-sm-12'>
+	  		<div class='row'>
+	  			<div class='col-sm-12'>
+  					<h3 class='h3-title'>Transformations</h3>
+  					<hr />
+  				</div>
+	  		</div>
+	  		<div class='row'>
+			  	<div class='col-sm-6'>
+			  		<div class='row'>
+			  			<div class='col-sm-12'><h4 class='text-center'>Male</h4></div>
+			  		</div>
+			  		<div class='row'>
+			  			<div class='col-sm-12'>
+			  				<img src="{{ URL::asset('img/male-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
+			  			</div>
+			  		</div>
+			  		<div class='row'>
+			  			<div class='col-sm-12'>
+			  				<div class="list-group">
+							  <a href="{{url('/user/transformations/M/19 and below')}}" class="list-group-item">Male Teens ( 19 and below )</a>
+							  <a href="{{url('/user/transformations/M/20 - 30')}}" class="list-group-item">Male ( 20 - 30 )</a>
+							  <a href="{{url('/user/transformations/M/30 - 40')}}" class="list-group-item">Male ( 30 - 40 )</a>
+							  <a href="{{url('/user/transformations/M/40 +')}}" class="list-group-item">Male ( 40 + )</a>
+							  <a href="{{url('/user/transformations/M/all')}}" class="list-group-item">All Male</a>
+							</div>
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div class='col-sm-6'>
+			  		<div class='row'>
+			  			<div class='col-sm-12'><h4 class='text-center'>Female</h4></div>
+			  		</div>
+			  		<div class='row'>
+			  			<div class='col-sm-12'>
+			  				<img src="{{ URL::asset('img/female-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
+			  			</div>
+			  		</div>
+			  		<div class='row'>
+			  			<div class='col-sm-12'>
+			  				<div class="list-group">
+							  <a href="{{url('/user/transformations/F/19 and below')}}" class="list-group-item">Female Teens ( 19 and below )</a>
+							  <a href="{{url('/user/transformations/F/20 - 30')}}" class="list-group-item">Female ( 20 - 30 )</a>
+							  <a href="{{url('/user/transformations/F/30 - 40')}}" class="list-group-item">Female ( 30 - 40 )</a>
+							  <a href="{{url('/user/transformations/F/40 +')}}" class="list-group-item">Female ( 40 + )</a>
+							  <a href="{{url('/user/transformations/F/all')}}" class="list-group-item">All Females</a>
+							</div>
+			  			</div>
+			  		</div>
+			  	</div>
+			</div>
+	  	</div>
+	</div>
+	<!--TRANSFORMATIONS END-->
 	<!--NEW USER PANEL-->
 	<div class='row bottom-margin' id='new-usr'>
 	  	<div class='col-xs-12'>
@@ -314,60 +372,4 @@
 	  	</div>
 	</div>
 	<!--NEW USER PANEL END-->
-	<!--TRANSFORMATIONS-->
-	<div class='row' id='transformations'>
-	  	<div class='col-sm-12'>
-	  		<div class='row'>
-	  			<div class='col-sm-12'>
-  					<h3 class='h3-title'>Transformations</h3>
-  					<hr />
-  				</div>
-	  		</div>
-	  		<div class='row'>
-			  	<div class='col-sm-6'>
-			  		<div class='row'>
-			  			<div class='col-sm-12'><h4 class='text-center'>Male</h4></div>
-			  		</div>
-			  		<div class='row'>
-			  			<div class='col-sm-12'>
-			  				<img src="{{ URL::asset('img/male-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
-			  			</div>
-			  		</div>
-			  		<div class='row'>
-			  			<div class='col-sm-12'>
-			  				<div class="list-group">
-							  <a href="#" class="list-group-item">Male Teens ( 19 and below )</a>
-							  <a href="#" class="list-group-item">Male ( 20 - 30 )</a>
-							  <a href="#" class="list-group-item">Male ( 30 - 40 )</a>
-							  <a href="#" class="list-group-item">Male ( 40 + )</a>
-							  <a href="#" class="list-group-item">All Male</a>
-							</div>
-			  			</div>
-			  		</div>
-			  	</div>
-			  	<div class='col-sm-6'>
-			  		<div class='row'>
-			  			<div class='col-sm-12'><h4 class='text-center'>Female</h4></div>
-			  		</div>
-			  		<div class='row'>
-			  			<div class='col-sm-12'>
-			  				<img src="{{ URL::asset('img/female-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
-			  			</div>
-			  		</div>
-			  		<div class='row'>
-			  			<div class='col-sm-12'>
-			  				<div class="list-group">
-							  <a href="#" class="list-group-item">Female Teens ( 19 and below )</a>
-							  <a href="#" class="list-group-item">Female ( 20 - 30 )</a>
-							  <a href="#" class="list-group-item">Female ( 30 - 40 )</a>
-							  <a href="#" class="list-group-item">Female ( 40 + )</a>
-							  <a href="#" class="list-group-item">All Female</a>
-							</div>
-			  			</div>
-			  		</div>
-			  	</div>
-			</div>
-	  	</div>
-	</div>
-	<!--TRANSFORMATIONS END-->
 @stop

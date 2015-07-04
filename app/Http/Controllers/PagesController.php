@@ -48,6 +48,14 @@ class PagesController extends Controller {
 		$title = "About";
 		return view("pages.about",['title' => $title]);
 	}
+	public function forum()
+	{
+		if (Auth::guest()){
+			return Redirect::to('/auth/login');
+		}
+		$title = "Forum";
+		return view("pages.forum",['title' => $title]);
+	}
 
 	public function donate()
 	{
@@ -83,11 +91,6 @@ class PagesController extends Controller {
 
 	public function profile($id)
 	{
-		$newsfeed = DB::table('news_feed')
-					->where('user_id','=',$id)
-					->join('comment','news_feed.id','=','comment.newsfeed_id')
-					->join('users','comment.sending_id','=','users.id')
-					->get();
 		if (Auth::guest()){
 			return Redirect::to('/auth/login');
 		}
@@ -103,7 +106,6 @@ class PagesController extends Controller {
 			->with('progress_pic',$progress_pic)
 			->with('before_pic', $before_query)
 			->with('journals', $journals)
-			->with('newsfeed', $newsfeed)
 			->with('title','Profile of '.Auth::user()->username);
 	}
 
@@ -140,4 +142,100 @@ class PagesController extends Controller {
 			->with('user_info', $user_info);
 	}
 
+	public function transformations($sex,$slug){
+
+		if($sex == 'M'){
+		switch ($slug) {
+			case '19 and below':
+				$ageOne = 19;
+				$ageTwo = 0;
+				break;
+			case '20 - 30':
+				$ageOne = 30;
+				$ageTwo = 20;
+				break;
+			case '30 - 40':
+				$ageOne = 40;
+				$ageTwo = 30;
+				break;
+			case '40 +':
+				$ageOne = 150;
+				$ageTwo = 40;
+				break;
+			case 'all':
+				$ageOne = 200;
+				$ageTwo = 0;
+				break;
+		
+		}
+		}
+
+		if($sex == 'F'){
+		switch ($slug) {
+			case '19 and below':
+					$ageOne = 19;
+					$ageTwo = 0;
+					break;
+			case '20 - 30':
+				$ageOne = 30;
+				$ageTwo = 20;
+				break;
+			case '30 - 40':
+				$ageOne = 40;
+				$ageTwo = 30;
+				break;
+			case '40 +':
+				$ageOne = 150;
+				$ageTwo = 40;
+				break;
+			case 'all':
+				$ageOne = 200;
+				$ageTwo = 0;
+				break;
+			}
+		}
+			$id_array = array();
+
+			if(isset($ageOne) AND isset($ageTwo)){
+				//Select birthday, TIMESTAMPDIFF(year,birthday,CURDATE()) AS NumberOfYears FROM users
+				$transCards = DB::table('users')
+					->select(DB::raw('*,TIMESTAMPDIFF(year,birthday,CURDATE()) as age'))
+					//->where(DB::raw('TIMESTAMPDIFF(year,birthday,CURDATE()) <= 200'))
+					//->where(DB::raw('TIMESTAMPDIFF(year,birthday,CURDATE()) >= 0'))
+					->whereRaw('TIMESTAMPDIFF(year,birthday,CURDATE()) <='.$ageOne)
+					->whereRaw('TIMESTAMPDIFF(year,birthday,CURDATE()) >='.$ageTwo)
+					->where('sex','=',$sex)
+					->orderByRaw('RAND()')
+					->get();
+				foreach($transCards as $card) {
+					$id_array[] = $card->id;
+				}
+				$before_array = array();
+				$progress_array = array();
+				foreach ($id_array as $id) {
+					$before = DB::table('before')
+					->where('user_id','=',$id)
+					->orderBy('id','DESC')
+					->limit(1)
+					->get();
+					$before_array[] = $before;
+
+					$progress = DB::table('progress')
+					->where('user_id','=',$id)
+					->orderBy('id','DESC')
+					->limit(1)
+					->get();
+					$progress_array[] = $progress;
+				}
+
+					
+				
+
+			}
+			return View::make('pages.transformation')
+			->with('title' , 'Transformations')
+			->with('transCards', $transCards)
+			->with('before', $before_array)
+			->with('progress', $progress_array);
+		}
 }

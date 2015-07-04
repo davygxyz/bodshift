@@ -51,8 +51,8 @@
 						      	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      						<ul class="nav navbar-left navbar-nav">
 		      							<li><a href="{{URL::to('/about')}}">About</a></li>
-		      							<li><a href="{{URL::to('/donate')}}">Donate</a></li>
 		      							<li><a href="{{URL::to('/contact')}}">Contact Us</a></li>
+		      							<li><a href="{{URL::to('/forum')}}">Forum</a></li>
 		      							<li><a href="{{URL::to('/motivation')}}">Motivation</a></li>
 		      						</ul>
 		      						<ul class="nav navbar-right navbar-nav">
@@ -86,15 +86,15 @@
 				<!--Site Content End-->
 				<!--Site Footer Start-->
 				<div class='row'>
+					<hr/>
 					<div class='col-sm-12' id='footer'>
-						
+						Copyright @2015 Bodshift.com | <a href="{{URL::to('/donate')}}">Donate</a> | <a href="{{URL::to('/contact')}}">Contact Us</a> | <a href="#">Terms and Conditions</a>
 					</div>
 				</div>
 				<!--Site Footer End-->
 			</div>
 		</div>
 	</div>
-	@yield('footer')
 	<script src="{{ URL::asset('js/dropzone.js') }}"></script>
 	<script src="{{ URL::asset('js/lightbox.min.js') }}"></script>
 	<script src="{{ URL::asset('js/script.js') }}"></script>

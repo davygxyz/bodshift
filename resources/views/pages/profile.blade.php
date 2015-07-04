@@ -158,70 +158,8 @@
 				@endif
 			</div>
 			<div class='col-xs-12 col-md-6'>
-				<div id='feed-wrapper'>
-				<div class='row'>
-					<div class='col-xs-12 content'>
-						<div id='feed'>
-							<div id='user-card'>
-								<div class='row'>
-									<div class='col-xs-2'>
-										@if(isset(Auth::user()->avatar))
-										<img src="{{ URL::asset('uploads/user/profile_pic').'/'.$info->avatar }}" alt='profile-picture' class="img-responsive">	
-										@else
-										<img src="{{ URL::asset('img/default-pic.png')}}" alt='profile-picture' class="img-responsive">
-										@endif	
-									</div>
-									<div class='col-xs-10'>
-										<form method="POST" enctype="multipart/form-data" action="{{ url('create/post') }}">
-											<input type="hidden" name="_token" value="{{ csrf_token() }}">
-											<input name="receive_id" type="hidden" value="{{$info->id}}">
-											<div class="dropdown">
-												<textarea class="form-control" name='feedpost' rows="3" id="feed-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></textarea>
-											
-												<div class="dropdown-menu col-xs-12" id='feed-drop-menu' aria-labelledby="feed-dropdown">
-											    <button type="submit" class="btn btn-primary pull-right">Post</button>
-												</div>
-											</div>
-
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class='row'>
-					<div class='col-xs-12'>
-						<h3 class="text-center">Activity Feed</h3>
-					</div>
-					<div class='row'>
-						@if (isset($newsfeed))
-						@foreach($newsfeed as $feed)
-						<div class='col-xs-12 content'>
-							<div class='row'>
-								<div id='feed-panel'>
-								<div class='col-xs-2 content'>
-									@if(isset($feed->avatar))
-									<a href="{{url('/profile')}}/user_id={{$feed->sending_id }}"><img src="{{ URL::asset('uploads/user/profile_pic').'/'.$feed->avatar }}" alt='profile-picture' class="img-responsive"></a>
-									@else
-									<a href="{{url('/profile')}}/user_id={{$feed->sending_id }}"><img src="{{ URL::asset('img/default-pic.png')}}" alt='profile-picture' class="img-responsive"></a>
-									@endif	
-								</div>
-								<div class='row'>
-									<div class='col-xs-10 content'>{{$feed->comment}}</div>
-									<div class='col-xs-12'>
-										Reply
-									</div>
-								</div>
-								</div>
-							</div>
-						</div>
-						@endforeach
-						@endif
-					</div>
-				</div>
+				
 			</div>
-		</div>
 		</div>
 	</div>
 </div>

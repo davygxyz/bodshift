@@ -53,6 +53,9 @@
 							</div>
 						</div>
 					</form>
+					<div class='col-xs-12 text-center'>
+						Not a member? Sign up <a href="{{URL::to('/auth/register')}}">Here</a>
+					</div>
 				</div>
 			</div>
 		</div>
