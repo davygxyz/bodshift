@@ -1,6 +1,11 @@
 @extends('master')
 @section('content')
 <div class='row'>
+	<div class='col-xs-12 content'>
+		<a href="{{url('/')}}"><span class='glyphicon glyphicon-home' aria-hidden='true'></span> Back Home</a>
+	</div>
+</div>
+<div class='row'>
 	<div class='col-sm-4 content'>
 		<h4>Forum</h4>
 	</div>
@@ -35,8 +40,8 @@
 			</div>
 			<!--DROPDOWN MENU END-->
 		  </li>
-		  <li><a href='#'>Your Topic</a></li>
-		  <li><a href='#'>Your Answeres</a></li>
+		  <li><a href='#'>Your Topics</a></li>
+		  <li><a href='#'>Your Answers</a></li>
 		</ul>
 		@if (count($errors) > 0)
 		<div class="alert alert-danger">
@@ -54,7 +59,6 @@
 	<div class='col-xs-12'>
 		<table class="table table-bordered">
 			<tr>
-				<td width="9%" align="center" bgcolor="#E6E6E6"><strong>#</strong></td>
 				<td width="50%" align="center" bgcolor="#E6E6E6"><strong>Topic</strong></td>
 				<td width="15%" align="center" bgcolor="#E6E6E6"><strong>Views</strong></td>
 				<td width="13%" align="center" bgcolor="#E6E6E6"><strong>Replies</strong></td>
@@ -63,7 +67,6 @@
 
 			@foreach($forum_query as $forum)
 			<tr>
-				<td><strong>{{$forum->id}}</strong></td>
 				<td><a href="{{ url('forum/topic_id').'='.$forum->id }}"><strong>{{$forum->topic}}</strong></a></td>
 				<td><strong>{{$forum->view}}</strong></td>
 				<td><strong>{{$forum->reply}}</strong></td>
@@ -71,6 +74,11 @@
 			</tr>
 			@endforeach
 		</table>
+	</div>
+</div>
+<div class='row'>
+	<div class='col-xs-12'>
+		{!! $forum_query->render() !!}
 	</div>
 </div>
 

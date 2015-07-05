@@ -64,6 +64,16 @@
 						</div>
 
 						<div class="form-group">
+							<label class="col-md-4 control-label">Sex</label>
+							<div class="col-md-6">
+								<select class="form-control" name='sex'>
+								  <option>M</option>
+								  <option>F</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label class="col-md-4 control-label">Profile Picture</label>
 							<div class="col-md-6">
 								<input type="file" class="form-control" name="file" value="{{ old('file') }}">

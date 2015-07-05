@@ -352,8 +352,8 @@
 	  					<?php $c=0; ?>
 	  					@foreach($allUsers as $user)
 	  					<?php $c++; ?>
-	  					<div class='col-xs-2 home-pics'>
-	  						<h4 class = 'text-center'>{{$user->username}}</h4>
+	  					<div class='col-xs-1 home-pics'>
+	  						<h4 class = 'text-center' style='word-wrap: break-word; min-height:50px; font-size:12px'>{{$user->username}}</h4>
 	  						@if(isset($user->avatar))
 							<img src="{{ URL::asset('uploads/user/profile_pic').'/'.$user->avatar }}" alt='profile-picture' class="img-responsive">	
 							@else
@@ -361,7 +361,7 @@
 							@endif
 	  						<div class='nu-link'><a href="{{url('/profile')}}/user_id={{$user->id }}">View Profile</a></div>
 	  					</div>
-	  					@if($c % 6 == 0 )
+	  					@if($c % 12 == 0 )
 						<div class="clearfix visible-lg-block visible-md-block"></div>
 						@endif
 

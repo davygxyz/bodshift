@@ -55,7 +55,7 @@ class PagesController extends Controller {
 		if (Auth::guest()){
 			return Redirect::to('/auth/login');
 		}
-		$forum_query = ForumQuestions::all();
+		$forum_query = ForumQuestions::orderBy('id','DESC')->paginate(20);
 		$title = "Forum";
 		return view("pages.forum",['title' => $title])
 		->with('forum_query',$forum_query);

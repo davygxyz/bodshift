@@ -1,6 +1,11 @@
 @extends('master')
 @section('content')
 <div class='row'>
+	<div class='col-xs-12 content'>
+		<a href="{{url('/forum')}}"><span class='glyphicon glyphicon-list-alt' aria-hidden='true'></span> Back to Forum</a>
+	</div>
+</div>
+<div class='row'>
 	<div class='col-sm-4 content'>
 		<h4>Forum</h4>
 	</div>
@@ -35,8 +40,8 @@
 			</div>
 			<!--DROPDOWN MENU END-->
 		  </li>
-		  <li><a href='#'>Your Topic</a></li>
-		  <li><a href='#'>Your Answeres</a></li>
+		  <li><a href='#'>Your Topics</a></li>
+		  <li><a href='#'>Your Answers</a></li>
 		</ul>
 		@if (count($errors) > 0)
 		<div class="alert alert-danger">

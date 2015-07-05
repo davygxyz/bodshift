@@ -25,6 +25,7 @@ class Registrar implements RegistrarContract {
 			'birthday' => 'required',
 			'weight' => 'required|max:3',
 			'about' => 'max:500',
+			'sex' => 'required',
 			'file' => 'max:10000|mimes:jpeg,png,gif,jpg'
 		]);
 	}
@@ -61,6 +62,7 @@ class Registrar implements RegistrarContract {
 				'avatar' => $filename,
 				'ft' => $data['ft'],
 				'inch' => $data['inch'],
+				'sex' =>$data['sex']
 			]);
 		}else{
 			return redirect()->back()->withErrors($validation->errors());

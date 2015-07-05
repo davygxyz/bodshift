@@ -1,5 +1,10 @@
 @extends('master')
 @section('content')
+<div class='row'>
+	<div class='col-xs-12 content'>
+		<a href="{{url('/')}}"><span class='glyphicon glyphicon-home' aria-hidden='true'></span> Back Home</a>
+	</div>
+</div>
 
 <div class='row'>
 	<div class='col-xs-12'>
