@@ -6,6 +6,20 @@ hr{
     margin-bottom:5px !important;
     margin-top:5px !important;
 }
+.awr-wpr{
+    background-color: white;
+    padding:5px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+#answers-col{
+    background-color:#F2F2F2;
+    border-radius: 4px;
+    border:1px solid #ccc;
+}
+#nt-dropdown{
+    width: 400px !important;
+}
 .color{
     color:#003c51;
     font-weight: bold;

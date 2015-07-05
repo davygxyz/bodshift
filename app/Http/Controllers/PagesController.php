@@ -14,6 +14,8 @@ use App\User;
 use App\Height;
 use Redirect;
 use App\Newsfeed;
+use App\ForumQuestions;
+use App\ForumAnswer;
 class PagesController extends Controller {
 
 	/**
@@ -53,8 +55,28 @@ class PagesController extends Controller {
 		if (Auth::guest()){
 			return Redirect::to('/auth/login');
 		}
+		$forum_query = ForumQuestions::all();
 		$title = "Forum";
-		return view("pages.forum",['title' => $title]);
+		return view("pages.forum",['title' => $title])
+		->with('forum_query',$forum_query);
+	}
+
+	public function forumView($id){
+		DB::table('forum_question')->where('id','=', $id)->increment('view');
+		$title = "Forum";
+		$forum_query = ForumQuestions::select(DB::raw('*,forum_question.id as forum_id'))
+		->where('forum_question.id','=',$id)
+		->leftJoin('users','forum_question.user_id','=','users.id')
+		->first();
+
+		$answer_query = ForumAnswer::where('question_id','=',$id)
+		->leftJoin('users','forum_answer.a_user_id','=','users.id')
+		->get();
+		return view("pages.view_topic",['title' => $title])
+		->with('forum_query',$forum_query)
+		->with('answer_query',$answer_query)
+		;
+
 	}
 
 	public function donate()

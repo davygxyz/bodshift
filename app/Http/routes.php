@@ -16,6 +16,9 @@ Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
 
 Route::get('forum', 'PagesController@forum');
+Route::post('forum/create','Create@createForum');
+Route::get('forum/topic_id={id}','PagesController@forumView');
+Route::post('forum/answer','Create@answer');
 
 Route::get('donate', 'PagesController@donate');
 
