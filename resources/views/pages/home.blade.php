@@ -32,6 +32,7 @@
 									<!--USER NAVIGATION BAR ==LEFT SIDE-->
 									<ul class="nav nav-pills nav-stacked">
 										<li><a href="{{url('/profile')}}/user_id={{Auth::user()->id }}">Profile</a></li>
+										<li><a href="{{url('/profile/edit')}}/user_id={{Auth::user()->id }}">Edit Info</a></li>
 									    <li><a href="{{url('/gallery')}}/user_id={{Auth::user()->id }}">Photo Gallery</a></li>
 									    <hr/>
 									    <li><a href="{{url('/journal')}}/user_id={{Auth::user()->id }}">Journal</a></li>

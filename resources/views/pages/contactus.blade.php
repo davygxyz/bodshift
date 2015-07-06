@@ -7,29 +7,25 @@
 </div>
 <div class='row'>
   <div class='col-sm-12 col-md-6 col-md-offset-3 content'>
-    <form>
+    
+    <form method="POST" action="{{ url('contact/email') }}">
       <div class="form-group">
-        <label for="ct-firstname">First Name:</label>
-        <input type="text" class="form-control" id="ct-firsname" placeholder="Enter First Name">
-      </div>
-      <div class="form-group">
-        <label for="ct-lastname">Last Name:</label>
-        <input type="text" class="form-control" id="ct-lastname" placeholder="Enter Last Name">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="user_id" value="{{ Auth::user()->id ?: '' }}">
+        <label for="ct-firstname">Name:</label>
+        <input type="text" class="form-control" name="name" value="{{ Auth::user()->name ?: '' }}" placeholder="Enter First Name">
       </div>
       <div class="form-group">
         <label for="ct-email">Your Email:</label>
-        <input type="email" class="form-control" id="ct-email" placeholder="Enter Email Address">
+        <input type="email" class="form-control" name="email" value="{{ Auth::user()->email ?: '' }}" placeholder="Enter Email Address">
       </div>
       <div class="form-group">
         <label for="ct-message">Message:</label>
-        <textarea class="form-control" id="ct-message" rows="3"></textarea>
+        <textarea class="form-control" name="msg" rows="3"></textarea>
       </div>
       <div class="checkbox">
-        <label>
-          <input type="checkbox"> Are you a user?
-        </label>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
   </div>

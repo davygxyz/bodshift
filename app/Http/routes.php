@@ -31,6 +31,8 @@ Route::post('progress/uploads', 'Upload@postProgress');
 Route::get('progress/delete/id={id}','Delete@progress');
 
 Route::get('profile/user_id={id}', 'PagesController@profile');
+Route::get('profile/edit/user_id={id}', 'PagesController@editinfo');
+Route::post('edit/info','Update@editInfo');
 
 Route::get('journal/user_id={id}', 'PagesController@journal');
 
@@ -40,6 +42,8 @@ Route::get('journal/delete/journal_id={id}', 'Delete@journal');
 Route::post('before/update', 'Update@postbefore');
 Route::post('before/uploads', 'Upload@postBefore');
 Route::get('before/delete/id={id}','Delete@before');
+
+Route::post('contact/email', 'Create@contactus');
 
 
 //Gallery Routes

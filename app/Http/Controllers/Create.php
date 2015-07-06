@@ -12,6 +12,7 @@ use App\Progress;
 use App\Journal;
 use App\ForumQuestions;
 use App\ForumAnswer;
+use Mail;
 
 
 
@@ -39,6 +40,20 @@ class Create extends Controller {
 		DB::table('forum_question')->where('id','=', $data['question_id'])->increment('reply');
 
 	    return Redirect::back();
+	}
+	public function contactus(){
+		$data = Request::all();
+		var_dump($data);
+		Mail::send('emails.contactus', $data, function($message)
+		{
+		$message->from(Input::get('email'), Input::get('name'));
+	    $message->to('bodshift@bodshift.com');
+	    $message->subject('User Contact Form.');
+
+		});
+
+		Session::push('status', 'Email sent successfully!!');
+		return Redirect::back();
 	}
 	
 }

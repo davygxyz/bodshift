@@ -78,6 +78,16 @@ class PagesController extends Controller {
 		;
 
 	}
+	public function editinfo($id){
+		if(Auth::user()->id != $id){
+			abort(403, 'Unauthorized action.');
+		}
+		$user_query = User::find(Auth::user()->id)->first();
+		$title = 'Edit Info';
+		return view("pages.editinfo")
+		->with('title', $title)
+		->with('user_query',$user_query);
+	}
 
 	public function donate()
 	{
