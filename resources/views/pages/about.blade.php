@@ -7,13 +7,16 @@
 </div>
 <div class='row'>
 	<div class='col-sm-12 col-lg-6 content'>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ligula iaculis, convallis nulla vitae, aliquet nisi. Donec lacinia volutpat sem et suscipit. Maecenas pharetra eros quis porttitor accumsan. Donec porttitor elementum risus, ac egestas est. Ut feugiat dui urna, et hendrerit purus cursus sit amet. Duis mauris sapien, imperdiet nec diam ut, placerat facilisis mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum justo sed ligula blandit vehicula et ac nulla. In nulla odio, imperdiet sit amet ante in, suscipit cursus augue. Proin pulvinar pulvinar diam et sodales. Donec lacinia a sapien porttitor lobortis. Aenean sagittis sodales dolor vel tristique. Sed aliquam purus eu tincidunt blandit. Phasellus dignissim nisi sed ullamcorper posuere. Mauris nunc dui, commodo sit amet lobortis ut, laoreet ut ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
- nec interdum eget, accumsan id metus. Curabitur varius quam sit amet mauris tempus, ut elementum purus luctus.
+		<p>The overall goal of this site is to motivate people. 
+		We don’t care if you’re underweight, overweight, average or any other body 
+		types we forgot. We want to build a community of people willing to show the world 
+		their wonderful transformations. Remember, who is in control of their body? The answer is you. 
+		Doesn’t matter what anyone says, people can help you along the way but it’s up to you to take 
+		the advice.
 		</p>
 	</div>
 	<div class='col-sm-12 col-lg-6 content'>
-		<img src="http://placehold.it/600x300" alt='ad-space-right' class="img-responsive">
+		<img src="../img/bodytypes.png" alt='about body type image' class="img-responsive">
 	</div>
 </div>
 @stop

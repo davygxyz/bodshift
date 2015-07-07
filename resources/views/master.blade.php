@@ -88,7 +88,14 @@
 				<div class='row'>
 					<hr/>
 					<div class='col-sm-12' id='footer'>
-						Copyright @2015 Bodshift.com | <a href="{{URL::to('/donate')}}">Donate</a> | <a href="{{URL::to('/contact')}}">Contact Us</a> | <a href="#">Terms and Conditions</a>
+						<div class='row'>
+							<div class='col-xs-12'>
+								<p>Copyright @2015 Bodshift.com</p>
+							</div>
+							<div class='col-xs-12'>
+								<a href="{{URL::to('/donate')}}">Donate</a> | <a href="{{URL::to('/contact')}}">Contact Us</a> | <a href="#">Terms and Conditions</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!--Site Footer End-->
