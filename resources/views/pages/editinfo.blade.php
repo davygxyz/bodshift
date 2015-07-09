@@ -150,12 +150,19 @@
 					<div class="form-group">
 						<div class="col-md-6 col-md-offset-4">
 							<button type="submit" class="btn btn-primary">
-								Register
+								Update
 							</button>
 						</div>
 					</div>
 				</form>
 			</div>
+		</div>
+	</div>
+</div>
+<div class='row'>
+	<div class='col-xs-4 col-xs-offset-4'>
+		<div class="list-group">
+		  <a href="{{url('/delete/profile')}}" class="list-group-item list-group-item-danger">Delete Profile</a>
 		</div>
 	</div>
 </div>

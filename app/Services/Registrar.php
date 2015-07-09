@@ -40,33 +40,30 @@ class Registrar implements RegistrarContract {
 
 	public function create(array $data)
 	{
-
 		$file = Request::file('file');
-		$destinationPath = public_path().'/uploads/user/profile_pic';
-		// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
-		$filename = str_random(12);
-		//$filename = $file->getClientOriginalName();
-		//$extension =$file->getClientOriginalExtension(); 
-		$user_id = Auth::id();
-		$upload_success = Request::file('file')->move($destinationPath, $filename);
-
-		if( $upload_success ){
-			return User::create([
-				'name' => $data['name'],
-				'email' => $data['email'],
-				'password' => bcrypt($data['password']),
-				'username' => $data['username'],
-				'birthday' => $data['birthday'],
-				'weight' => $data['weight'],
-				'about' => $data['about'],
-				'avatar' => $filename,
-				'ft' => $data['ft'],
-				'inch' => $data['inch'],
-				'sex' =>$data['sex']
-			]);
+		if(isset($file)){
+			$destinationPath = public_path().'/uploads/user/profile_pic';
+			// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
+			$filename = str_random(12);
+			//$filename = $file->getClientOriginalName();
+			//$extension =$file->getClientOriginalExtension(); 
+			$user_id = Auth::id();
+			$upload_success = Request::file('file')->move($destinationPath, $filename);
 		}else{
-			return redirect()->back()->withErrors($validation->errors());
+			$filename = NULL;
 		}
+		return User::create([
+			'name' => $data['name'],
+			'email' => $data['email'],
+			'password' => bcrypt($data['password']),
+			'username' => $data['username'],
+			'birthday' => $data['birthday'],
+			'weight' => $data['weight'],
+			'about' => $data['about'],
+			'avatar' => $filename,
+			'ft' => $data['ft'],
+			'inch' => $data['inch'],
+			'sex' =>$data['sex']
+		]);
 	}
-
 }

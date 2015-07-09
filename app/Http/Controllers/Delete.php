@@ -44,5 +44,10 @@ class Delete extends Controller {
 		return Redirect::back();
 	}
 
+	public function profile(){
+		User::find(Auth::user()->id)->delete();
+		return Redirect::to('/auth/login');
+	}
+
 
 }

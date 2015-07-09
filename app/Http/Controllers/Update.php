@@ -63,13 +63,13 @@ class Update extends Controller {
 
 		if(!empty(Request::file('file'))){
 			$file = Request::file('file');
-			$destinationPath = public_path().'/uploads/user/progress';
+			$destinationPath = public_path().'/uploads/user/profile_pic';
 			// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
 			$filename = str_random(12);
 			//$filename = $file->getClientOriginalName();
 			//$extension =$file->getClientOriginalExtension(); 
 			$upload_success = Request::file('file')->move($destinationPath, $filename);
-			User::find(Auth::user()->id)->update(['file' => $filename]);
+			User::find(Auth::user()->id)->update(['avatar' => $filename]);
 		}
 
 		return Redirect::back();

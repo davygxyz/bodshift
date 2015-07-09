@@ -47,6 +47,8 @@ Route::get('before/delete/id={id}','Delete@before');
 
 Route::post('contact/email', 'Create@contactus');
 
+Route::get('delete/profile','Delete@profile');
+
 
 //Gallery Routes
 Route::get('gallery/user_id={id}', 'PagesController@photo_gallery');
