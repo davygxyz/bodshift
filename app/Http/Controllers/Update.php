@@ -61,7 +61,9 @@ class Update extends Controller {
 			User::find(Auth::user()->id)->update(['password' => $data['password']]);
 		}
 
-		if(!empty(Request::file('file'))){
+		$file_request = Request::file('file');
+
+		if(!empty($file_request)){
 			$file = Request::file('file');
 			$destinationPath = public_path().'/uploads/user/profile_pic';
 			// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
