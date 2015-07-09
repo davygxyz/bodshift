@@ -21,6 +21,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body> 
+	<ul class="list-group">
+	  <li class="list-group-item list-group-item-warning">Bodshift.com is in <strong>Beta Test Mode</strong>. Please contact us if you find any problems within the site. Thank You!!</li>
+	</ul>
 	<!--Page Wrapper Starts-->
 	<div class="container">
 		<div class='row'>
