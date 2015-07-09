@@ -40,8 +40,8 @@
 			</div>
 			<!--DROPDOWN MENU END-->
 		  </li>
-		  <li><a href='#'>Your Topics</a></li>
-		  <li><a href='#'>Your Answers</a></li>
+		  <li><a href="{{url('form/your_topics/user_id='.Auth::user()->id)}}">Your Topics</a></li>
+		  <li><a href="{{url('form/your_replies/user_id='.Auth::user()->id)}}">Your Replies</a></li>
 		</ul>
 		@if (count($errors) > 0)
 		<div class="alert alert-danger">

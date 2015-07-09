@@ -7,52 +7,7 @@
 </div>
 <div class='row'>
 	<div class='col-sm-4 content'>
-		<h4>Forum</h4>
-	</div>
-	<div class='col-sm-8 content'>
-		<ul class="nav nav-pills">
-		  <li>
-		  	<div class="dropdown" style='padding: 10px 15px;'>
-		  	<a href='#' id="new-topic-drop" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Topic</a>
-		  	<!--DROPDOWN MENU-->
-		  	<div class='row dropdown-menu' id='nt-dropdown' aria-labelledby="new-topic-drop">
-				<div class='col-xs-12 content'>
-					<div class="panel panel-default">
-					  <div class="panel-heading">Create New Topic</div>
-					  <div class="panel-body">
-						<form method="POST" action="{{ url('forum/create') }}">
-							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-						  <div class="form-group">
-						    <label for="topic">Topic</label>
-						    <input name="topic" class="form-control" type="text" id="topic" value="{{ old('topic') }}"/>
-						  </div>
-						  <div class="form-group">
-						    <label for="detail">Detail</label>
-						    <textarea name="detail" style="width: 100%; height: 150px; resize: none;" id="detail"></textarea>
-						  </div>
-						  <button type="submit" class="btn btn-primary">Create</button>
-						</form>
-					  </div>
-					</div>
-				</div>
-			</div>
-			</div>
-			<!--DROPDOWN MENU END-->
-		  </li>
-		  <li><a href='#'>Your Topics</a></li>
-		  <li><a href='#'>Your Answers</a></li>
-		</ul>
-		@if (count($errors) > 0)
-		<div class="alert alert-danger">
-			<strong>Whoops!</strong> There were some problems with your input.<br><br>
-			<ul>
-				@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</div>
-		@endif
+		<h4>Forum Topic</h4>
 	</div>
 </div>
 <div class='row'>
@@ -120,6 +75,11 @@
 			</div>
 		</div>
 		
+	</div>
+</div>
+<div class='row'>
+	<div class='col-xs-12'>
+		{!! $answer_query->render() !!}
 	</div>
 </div>
 

@@ -55,10 +55,30 @@ class PagesController extends Controller {
 		if (Auth::guest()){
 			return Redirect::to('/auth/login');
 		}
-		$forum_query = ForumQuestions::orderBy('id','DESC')->paginate(20);
+		$forum_query = ForumQuestions::orderBy('sticky','DESC')
+		->orderBy('id','DESC')
+		->paginate(20);
 		$title = "Forum";
 		return view("pages.forum",['title' => $title])
 		->with('forum_query',$forum_query);
+	}
+	public function your_topics($id){
+		if(Auth::user()->id != $id){
+			abort(404, 'Unauthorized action.');
+		}
+		$forum_question_querry = ForumQuestions::where('user_id','=',$id)
+		->orderBy('id','DESC')
+		->paginate(10);
+		return view("pages.your_topics")
+		->with('forum_question_querry', $forum_question_querry);
+	}
+	public function forum_replies($id){
+		$forum_answer_querry = ForumAnswer::where('a_user_id','=',$id)
+		->orderBy('a_id','DESC')
+		->leftJoin('forum_question','forum_answer.question_id','=','forum_question.id')
+		->paginate(10);
+		return view('pages.forum_replies')
+		->with('forum_answer_querry', $forum_answer_querry);
 	}
 
 	public function forumView($id){
@@ -71,7 +91,7 @@ class PagesController extends Controller {
 
 		$answer_query = ForumAnswer::where('question_id','=',$id)
 		->leftJoin('users','forum_answer.a_user_id','=','users.id')
-		->get();
+		->paginate(10);
 		return view("pages.view_topic",['title' => $title])
 		->with('forum_query',$forum_query)
 		->with('answer_query',$answer_query)
@@ -80,7 +100,7 @@ class PagesController extends Controller {
 	}
 	public function editinfo($id){
 		if(Auth::user()->id != $id){
-			abort(403, 'Unauthorized action.');
+			abort(404, 'Unauthorized action.');
 		}
 		$user_query = User::find(Auth::user()->id)->first();
 		$title = 'Edit Info';
