@@ -29,7 +29,7 @@ class PagesController extends Controller {
 	public function index()
 	{
 		$allUsers =  User::orderByRaw('RAND()')->take(12)->get();
-		$title = "Home";
+		$title = "Welcome";
 		if (Auth::check()) {
 			$before_query = Before::where('user_id', '=', Auth::user()->id)->first();
 			$progress_pic = Progress::where('user_id', '=', Auth::user()->id)->orderBy('id','DESC')->first();
