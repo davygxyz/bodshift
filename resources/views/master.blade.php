@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="description" content="Body Transformation site">
+	<meta name="keywords" content="Weight,Lifting,Weightlifting,Body Transformation,Transformation,Transformations">
+	<meta name="author" content="David Gilliam">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bodshift | {{ $title or 'You are in control of your own body!' }}
