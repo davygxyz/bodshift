@@ -94,7 +94,11 @@
 																		</div>
 																		<div class="form-group">
 																		    <label for="weight">Weight</label>
-																		    <input type="number" class="form-control" id="weight" name='weight' placeholder="Enter Weight">
+																		    <input type="number" class="form-control" name='weight' placeholder="Enter Weight">
+																		</div>
+																		<div class="form-group">
+																		    <label for="weight">Date</label>
+																		    <input type="date" class="form-control" name='fdate'>
 																		</div>
 																	    <button type="submit" class="btn btn-primary">Add</button>
 																	</form>
@@ -137,7 +141,7 @@
 																		</div>
 																		<div class="form-group">
 																		    <label for="weight">Date</label>
-																		    <input type="date" class="form-control" id="date" name='date'>
+																		    <input type="date" class="form-control" id="fdate" name='fdate'>
 																		</div>
 																	    <button type="submit" data-loading-text="Adding..." class="btn btn-primary">Add</button>
 																	</form>
@@ -196,7 +200,7 @@
 																		</div>
 																		<div class="form-group">
 																		    <label for="weight">Date</label>
-																		    <input type="date" class="form-control" id="date" name='date'>
+																		    <input type="date" class="form-control" id="fdate" name='fdate'>
 																		</div>
 																	    <button type="submit" class="btn btn-primary loading-btn" data-loading-text="Adding...">Add</button>
 																	</form>

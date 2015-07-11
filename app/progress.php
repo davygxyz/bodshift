@@ -9,7 +9,7 @@ class Progress extends Eloquent {
 	//Table
 	protected $table = 'progress';
 
-	public static $rules = array('file' => 'required','weight' => 'numeric|max:700|required','date'=>'required');
+	public static $rules = array('file' => 'required','weight' => 'numeric|max:700|required','fdate'=>'required');
 
 	public static function validate($data){
 		return Validator::make($data, static::$rules);

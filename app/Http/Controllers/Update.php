@@ -33,7 +33,7 @@ class Update extends Controller {
 		//$filename = $file->getClientOriginalName();
 		//$extension =$file->getClientOriginalExtension(); 
 		$upload_success = Request::file('file')->move($destinationPath, $filename);
-		Before::where('user_id', '=', $user_id)->update(['weight' => $data['weight'],'file' => $filename]);
+		Before::create(array('file' => $filename,'user_id' => $user_id,'weight' => $data['weight'],'date' => $data['fdate']));
 	    return Redirect::back();
 	}
 	public function editInfo(){

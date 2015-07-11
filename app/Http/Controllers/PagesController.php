@@ -31,7 +31,7 @@ class PagesController extends Controller {
 		$allUsers =  User::orderByRaw('RAND()')->take(12)->get();
 		$title = "Welcome";
 		if (Auth::check()) {
-			$before_query = Before::where('user_id', '=', Auth::user()->id)->first();
+			$before_query = Before::where('user_id', '=', Auth::user()->id)->orderBy('id','DESC')->first();
 			$progress_pic = Progress::where('user_id', '=', Auth::user()->id)->orderBy('id','DESC')->first();
 		}else{
 			return view("pages.home")
@@ -125,7 +125,7 @@ class PagesController extends Controller {
 	{
 		$user_id = Auth::user()->id;
 		$progress_pic = Progress::where('user_id', '=', $user_id)->get();
-		$before_pic = Before::where('user_id', '=', $user_id)->first();
+		$before_pic = Before::where('user_id', '=', $user_id)->orderBy('id','DESC')->first();
 		return view("pages.progress")
 		->with('title', 'Progress')
 		->with('progress_pic', $progress_pic)
@@ -147,7 +147,7 @@ class PagesController extends Controller {
 			return Redirect::to('/auth/login');
 		}
 		$journals = Journal::where('user_id', '=', $id)->where('visible', '=', 1)->first();
-		$before_query = Before::where('user_id', '=', $id)->first();
+		$before_query = Before::where('user_id', '=', $id)->orderBy('id','DESC')->first();
 		$user_info = User::find($id);
 		$user_gallery = DB::table('gallery_images')->where('user_id',$id)->take(12)->get();
 		$data = array('info' => $user_info, 'gallery' => $user_gallery);
