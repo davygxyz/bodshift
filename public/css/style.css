@@ -245,8 +245,8 @@ img[alt='ad-space-right']{
 .slider {
     position: relative;
     
-    background-color: #003c51;
-    height: 450px;
+    background-color: #006588;
+    height: 350px;
     margin: 10px;
     padding: 10px;
     
@@ -265,7 +265,7 @@ img[alt='ad-space-right']{
 }
 .progress-pic img{
 	width: auto;
-  	height: 300px;
+  	height: 200px;
 }
 .progress-pic {
     float: left;

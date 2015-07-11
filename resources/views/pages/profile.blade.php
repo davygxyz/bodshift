@@ -69,14 +69,14 @@
 				    	<div class='progress-pic' style='margin-top:24px'>
 				        	<img src="{{URL::asset('uploads/user/progress').'/'.$before_pic->file}}" alt='journey Phots' class="img-responsive">
 							<div class='small-12 columns text-centered'>Weight: {{$before_pic->weight}}</div>
-							<div class='small-12 columns text-centered'>Date: {{date("m/d/Y",strtotime($before_pic->date))}}</div>
+							<div class='small-12 columns text-centered'>Date: {{$before_pic->date}}</div>
 				        </div>
 		        		@endif
 				    	@foreach($progress_pic as $progress)
 				        <div class='progress-pic' style='margin-top:24px'>
 				        	<img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='journey Phots' class="img-responsive">
 							<div class='small-12 columns text-centered'>Weight: {{$progress->weight}}</div>
-							<div class='small-12 columns text-centered'>Date: {{ date("m/d/Y",strtotime($progress->date)) }}</div>
+							<div class='small-12 columns text-centered'>Date: {{$progress->date}}</div>
 				        </div>
 				        @endforeach
 					</div>
