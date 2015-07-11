@@ -8,15 +8,11 @@
 <div class='row'>
 	<div class='col-sm-12 col-lg-6 content'>
 		<p>
-			Pellentcitur a vitae orci. Pellentesque euismod porttitor tortor i in urna et, vehicula blandit ante. Praesent est libero, tempor nec interdum eget, accumsan id metus. Curabitur varius quam sit amet mauris tempus, ut elementum purus luctus.
+			Hello Bodshift guests, we would like your donations to help improve our site. We need help on the development end and also with providing our users with the best experience.
+			We would like to create a store and give gifts to random users. Help make this possible and Thank You very much for using bodshift.
 		</p>
 	</div>
 	<div class='col-sm-12 col-lg-6 content'>
-		<div class='row bottom-margin'>
-			<div class='col-sm-12'>
-				<img src="http://placehold.it/600x100" alt='donate-image' class="img-responsive">
-			</div>
-		</div>
 		<div class='row'>
 			<div class='col-sm-12'>
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style='text-align:center;'>

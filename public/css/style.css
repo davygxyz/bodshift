@@ -48,12 +48,14 @@ textarea[name='feedpost']{
 }
 .trans-card-info li{
     list-style: none;
+    color:#006588;
 }
 .trans-card-wrp{
-    background-color: #F2F2F2;
+    background-color: rgba(0, 103, 138, 1);
     border-radius: 5px;
       border: 1px solid #ccc;
       padding: 5px;
+      color:white;
 }
 .img-responsive {
     margin: 0 auto;

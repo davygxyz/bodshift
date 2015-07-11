@@ -5,7 +5,13 @@
 		<a href="{{url('/')}}"><span class='glyphicon glyphicon-home' aria-hidden='true'></span> Back Home</a>
 	</div>
 </div>
-
+<div class='row'>
+	<div class='col-xs-12 content text-center' style='color:#006588'>
+		<p>Have fun viewing all of the awesome transformations we have here at bodshift.com</p>
+		<p>Click on <strong>View Transformations</strong> to see a quick view of the users progress.</p>
+		<p>Click on the users <strong>Profile Picture</strong> to go to their profile page.</p>
+	</div>
+</div>
 <div class='row'>
 	<div class='col-xs-12'>
 		<div class='row'>
@@ -39,8 +45,8 @@
 						</div>
 					</div>
 					<div class='row'>
-						<div class='col-xs-12' style='background-color:#003C51; text-align:center; border-radius:4px;'>
-							<a  style='color:white;'href='#' type='button' data-toggle="modal" data-target="#trans-card-modal{{$c}}">View Transformation</a>
+						<div class='col-xs-12' style='background-color:white; text-align:center; border-radius:4px;'>
+							<a  style='color:#006588;'href='#' type='button' data-toggle="modal" data-target="#trans-card-modal{{$c}}">View Transformation</a>
 							<div class="modal fade" id="trans-card-modal{{$c}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 							  <div class="modal-dialog" role="document">
 							    <div class="modal-content">
