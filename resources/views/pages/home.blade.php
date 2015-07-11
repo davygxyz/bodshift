@@ -243,7 +243,7 @@
 				  <!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 				    <div class="item active">
-				    	<a href=""><img  class='carousel-img' src="{{ URL::asset('img/welcome-carousel.png') }}" alt='Welcome to bodshift.com carousel image'></a>
+						<img  class='carousel-img' src="{{ URL::asset('img/welcome-carousel.png') }}" alt='Welcome to bodshift.com carousel image'>
 				    	<div class="carousel-caption">
 				       	<!--Caption Empty-->
 				    	</div>
