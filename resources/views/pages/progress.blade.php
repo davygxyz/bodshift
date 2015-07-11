@@ -26,7 +26,7 @@
 		    	<!--BEFORE PICTURE-->
 		    	@if(isset($before_pic))
 		    	<div class='progress-pic' style='margin-top:24px'>
-		        	<img src="{{URL::asset('uploads/user/progress').'/'.$before_pic->file}}" alt='journey Phots' class="img-responsive">
+		        	<a href="{{ URL::asset('uploads/user/progress').'/'.$before_pic->file }}" data-lightbox="scroll"><img src="{{URL::asset('uploads/user/progress').'/'.$before_pic->file}}" alt='journey Phots' class="img-responsive"></a>
 					<div class='small-12 columns text-centered'>Weight: {{$before_pic->weight}}</div>
 					<div class='small-12 columns text-centered'>Date: {{$before_pic->date}}</div>
 					<div class='small-12 columns text-centered'><a href='{{url("before/delete/id=").$before_pic->id}}' class='delete-alert'>Delete</a></div>
@@ -36,7 +36,7 @@
 		    	<!--PROGRESS-->
 		    	@foreach($progress_pic as $progress)
 		        <div class='progress-pic' style='margin-top:24px'>
-		        	<img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='journey Phots' class="img-responsive">
+		        	<a href="{{ URL::asset('uploads/user/progress').'/'.$progress->file }}" data-lightbox="scroll"><img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='journey Phots' class="img-responsive"></a>
 					<div class='small-12 columns text-centered'>Weight: {{$progress->weight}}</div>
 					<div class='small-12 columns text-centered'>Date: {{ $progress->date }}</div>
 					<div class='small-12 columns text-centered'><a href='{{url("progress/delete/id=").$progress->id}}' class='delete-alert'>Delete</a></div>
