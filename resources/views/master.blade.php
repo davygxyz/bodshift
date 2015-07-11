@@ -7,6 +7,7 @@
 	<meta name="author" content="David Gilliam">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="http://www.bodshift.com">
 	<title>Bodshift | {{ $title or 'You are in control of your own body!' }}
 	</title>
 	<!-- Google Font -->

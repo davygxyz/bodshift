@@ -50,6 +50,11 @@
 				{!! $quote_query->render() !!}
 			</div>
 		</div>
+		<div class='row'>
+			<div id='text-warning'>
+				<p>Content on this page is not owned by this site. If you find that an image or video's copyright is violated, please contact us.</p>
+			</div>
+		</div>
 	</div>
 </div>
 @stop

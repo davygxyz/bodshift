@@ -12,7 +12,7 @@
 				<!--SHOW WELCOME MESSAGE-->
 				<div class="panel-heading">Welcome {{ Auth::user()->name ?: '' }}</div>
 				<!--****SHOW WELCOME MESSAGE END****-->
-				<div class="panel-body">
+				<div class="panel-body" id='home-usr-panel'>
 					<div class='row'>
 						<div class='col-xs-12'>
 							<div class='row'>
@@ -243,19 +243,19 @@
 				  <!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 				    <div class="item active">
-				    	<a href="{{URL::to('/auth/register')}}"><img src="{{ URL::asset('img/welcome.png') }}" alt='carousel-banner'></a>
+				    	<a href=""><img  class='carousel-img' src="{{ URL::asset('img/welcome-carousel.png') }}" alt='Welcome to bodshift.com carousel image'></a>
 				    	<div class="carousel-caption">
 				       	<!--Caption Empty-->
 				    	</div>
 				    </div>
 				    <div class="item">
-					    <a href="{{URL::to('/auth/register')}}"><img src="{{ URL::asset('img/banners/signupforfree.png') }}" alt='carousel-banner'></a>
+					    <a href="{{URL::to('/auth/register')}}"><img class='carousel-img' src="{{ URL::asset('img/banners/signupforfree.png') }}" alt='sign up for bodshift carousel image'></a>
 					    <div class="carousel-caption">
 					    <!--Caption Empty--> 
 					    </div>
 				    </div>
 				   <div class="item">
-				      	<a href="{{URL::to('/auth/register')}}"><img src="{{ URL::asset('img/focus-banner.png') }}" alt='carousel-banner'></a>
+				      	<a href="{{URL::to('/forum')}}"><img class='carousel-img' src="{{ URL::asset('img/forum-carousel.png') }}" alt='Go to forums carousel image'></a>
 				      	<div class="carousel-caption">
 				       	<!--Caption Empty-->
 				      	</div>
@@ -275,20 +275,14 @@
 		</div>
 	</div>
 	<!--CAROUSEL END-->
-	<!--MOTIVATIONAL BANNER-->
-	<div class='row bottom-margin' id='motiv-banner'>
-		<div class='col-sm-12' id='home-middle-message'>
-			<div class='col-sm-12'><h1 id='motiv-title'>strength</h1></div>
-		</div>
-	</div>
-	<!--MOTIVATIONAL BANNER END-->
 	<!--TRANSFORMATIONS-->
 	<div class='row' id='transformations'>
 	  	<div class='col-sm-12'>
 	  		<div class='row'>
-	  			<div class='col-sm-12'>
-  					<h3 class='h3-title'>Transformations</h3>
-  					<hr />
+	  			<div class='col-sm-12 home-title content'>
+  					<h1>Transformations</h1>
+  					<p>Do you need motivation to kick yourself in to high gear? <br /> See these transforamtions from other users.</p>
+  					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
   				</div>
 	  		</div>
 	  		<div class='row'>
@@ -298,7 +292,7 @@
 			  		</div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
-			  				<img src="{{ URL::asset('img/male-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
+			  				<img src="{{ URL::asset('img/male-weight.jpg') }}" alt='Man lifting weight bar' class="img-responsive home-trans-photo">
 			  			</div>
 			  		</div>
 			  		<div class='row'>
@@ -319,7 +313,7 @@
 			  		</div>
 			  		<div class='row'>
 			  			<div class='col-sm-12'>
-			  				<img src="{{ URL::asset('img/female-weight.jpg') }}" alt='home-trans-photo' class="img-responsive">
+			  				<img src="{{ URL::asset('img/female-weight.jpg') }}" alt='Woman deadlifting weights' class="img-responsive home-trans-photo">
 			  			</div>
 			  		</div>
 			  		<div class='row'>
@@ -338,17 +332,25 @@
 	  	</div>
 	</div>
 	<!--TRANSFORMATIONS END-->
+	<!--MOTIVATIONAL BANNER-->
+	<div class='row bottom-margin' id='motiv-banner'>
+		<div class='col-sm-12' id='home-middle-message'>
+			<div class='col-sm-12'><h1 id='motiv-title'>strength</h1></div>
+		</div>
+	</div>
+	<!--MOTIVATIONAL BANNER END-->
 	<!--NEW USER PANEL-->
-	<div class='row bottom-margin' id='new-usr'>
+	<div class='row bottom-margin'>
 	  	<div class='col-xs-12'>
 	  		<div class='row'>
-	  			<div class='col-xs-12'>
-	  				<div class='row'>
-	  					<div class='col-xs-12 content hidden-sm hidden-xs' id='sec-title'>
-	  						<h3>New Users</h3>
-	  						<hr />
-	  					</div>
-	  				</div>
+	  			<div class='col-sm-12 home-title content'>
+  					<h1>New Users</h1>
+  					<p>Welcome our new guests to our community!<br /> View their profile by clicking on their profile picture.</p>
+  					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+  				</div>
+	  		</div>
+	  		<div class='row'>
+	  			<div class='col-xs-12' id='home-new-usr'>
 	  				<div class='row hidden-sm hidden-xs'>
 	  					<?php $c=0; ?>
 	  					@foreach($allUsers as $user)
@@ -356,11 +358,10 @@
 	  					<div class='col-xs-1 home-pics'>
 	  						<h4 class = 'text-center' style='word-wrap: break-word; min-height:50px; font-size:12px'>{{$user->username}}</h4>
 	  						@if(isset($user->avatar))
-							<img src="{{ URL::asset('uploads/user/profile_pic').'/'.$user->avatar }}" alt='profile-picture' class="img-responsive">	
+							<a href="{{url('/profile')}}/user_id={{$user->id }}"><img src="{{ URL::asset('uploads/user/profile_pic').'/'.$user->avatar }}" alt='profile-picture' class="img-responsive"></a>	
 							@else
-							<img src="{{ URL::asset('img/default-pic.png')}}" alt='profile-picture' class="img-responsive">
+							<a href="{{url('/profile')}}/user_id={{$user->id }}"><img src="{{ URL::asset('img/default-pic.png')}}" alt='profile-picture' class="img-responsive"></a>
 							@endif
-	  						<div class='nu-link'><a href="{{url('/profile')}}/user_id={{$user->id }}">View Profile</a></div>
 	  					</div>
 	  					@if($c % 12 == 0 )
 						<div class="clearfix visible-lg-block visible-md-block"></div>
