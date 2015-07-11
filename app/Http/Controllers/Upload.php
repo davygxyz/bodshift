@@ -76,7 +76,7 @@ class Upload extends Controller {
 		//$filename = $file->getClientOriginalName();
 		//$extension =$file->getClientOriginalExtension(); 
 		$upload_success = Request::file('file')->move($destinationPath, $filename);
-		Before::create(array('file' => $filename,'user_id' => $user_id,'weight' => $data['weight'],'date' => $data['fdate']));
+		Before::create(array('file' => $filename,'user_id' => $user_id,'weight' => $data['weight'],'date' => date('Y-m-d', strtotime($data['fdate']))));
 		return Redirect::back();
 		
 	}
@@ -97,7 +97,7 @@ class Upload extends Controller {
 		//$filename = $file->getClientOriginalName();
 		//$extension =$file->getClientOriginalExtension(); 
 		$upload_success = Request::file('file')->move($destinationPath, $filename);
-		Progress::create(array('file' => $filename,'user_id' => $user_id,'weight' => $data['weight'],'date' => $data['fdate']));
+		Progress::create(array('file' => $filename,'user_id' => $user_id,'weight' => $data['weight'],'date' => date('Y-m-d', strtotime($data['fdate']))));
 		return Redirect::back();
 		
 	}
