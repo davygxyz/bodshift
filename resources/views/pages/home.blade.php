@@ -285,7 +285,7 @@
 	  		<div class='row'>
 	  			<div class='col-sm-12 home-title content'>
   					<h1>Transformations</h1>
-  					<p>Do you need motivation to kick yourself in to high gear? <br /> See these transforamtions from other users.</p>
+  					<p>Do you need motivation to kick yourself in to high gear? <br /> See these transformations from other users.</p>
   					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
   				</div>
 	  		</div>
