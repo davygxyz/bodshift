@@ -346,7 +346,7 @@
 	<!--NEW USER PANEL-->
 	<div class='row bottom-margin'>
 	  	<div class='col-xs-12'>
-	  		<div class='row'>
+	  		<div class='row hidden-sm hidden-xs'>
 	  			<div class='col-sm-12 home-title content'>
   					<h1>New Users</h1>
   					<p>Welcome our new guests to our community!<br /> View their profile by clicking on their profile picture.</p>
