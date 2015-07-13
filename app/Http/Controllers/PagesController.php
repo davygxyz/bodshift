@@ -103,7 +103,6 @@ class PagesController extends Controller {
 			abort(404, 'Unauthorized action.');
 		}
 		$user_query = User::find(Auth::user()->id);
-		var_dump($user_query);
 		$title = 'Edit Info';
 		return view("pages.editinfo")
 		->with('title', $title)
