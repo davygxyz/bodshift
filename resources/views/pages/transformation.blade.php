@@ -47,7 +47,7 @@
 					<div class='row'>
 						<div class='col-xs-12' style='background-color:white; text-align:center; border-radius:4px;'>
 							<a  style='color:#006588;'href='#' type='button' data-toggle="modal" data-target="#trans-card-modal{{$c}}">View Transformation</a>
-							<div class="modal fade" id="trans-card-modal{{$c}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal fade trans-modal" id="trans-card-modal{{$c}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 							  <div class="modal-dialog" role="document">
 							    <div class="modal-content">
 							      <div class="modal-header">

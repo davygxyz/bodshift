@@ -28,7 +28,6 @@
 		    	<div class='progress-pic' style='margin-top:24px'>
 		        	<a href="{{ URL::asset('uploads/user/progress').'/'.$before_pic->file }}" data-lightbox="scroll"><img src="{{URL::asset('uploads/user/progress').'/'.$before_pic->file}}" alt='journey Phots' class="img-responsive"></a>
 					<div class='small-12 columns text-centered'>Weight: {{$before_pic->weight}}</div>
-					<div class='small-12 columns text-centered'>Date: {{$before_pic->date}}</div>
 					<div class='small-12 columns text-centered'><a href='{{url("before/delete/id=").$before_pic->id}}' class='delete-alert'>Delete</a></div>
 		        </div>
 		        @endif
@@ -38,7 +37,6 @@
 		        <div class='progress-pic' style='margin-top:24px'>
 		        	<a href="{{ URL::asset('uploads/user/progress').'/'.$progress->file }}" data-lightbox="scroll"><img src="{{URL::asset('uploads/user/progress').'/'.$progress->file}}" alt='journey Phots' class="img-responsive"></a>
 					<div class='small-12 columns text-centered'>Weight: {{$progress->weight}}</div>
-					<div class='small-12 columns text-centered'>Date: {{ $progress->date }}</div>
 					<div class='small-12 columns text-centered'><a href='{{url("progress/delete/id=").$progress->id}}' class='delete-alert'>Delete</a></div>
 		        </div>
 		        @endforeach
