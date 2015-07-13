@@ -87,6 +87,15 @@
 				<!--Site Content Start-->
 				<div class='row bottom-margin'   id='main-content'>
 					<div class='col-sm-12'>
+					<div class='row visible-xs'>
+						<div class='col-xs- content'>
+							@if (Auth::guest())
+							<P class = 'pull-right'><a href="{{URL::to('/auth/login')}}">Login</a> | <a href="{{URL::to('/auth/register')}}">Sign Up</a></P>
+							@else
+							<P class = 'pull-right'><a href="{{ url('/auth/logout') }}">Logout</a></P>
+							@endif
+						</div>
+					</div>
 					@yield('content')
 					</div>
 				</div>
