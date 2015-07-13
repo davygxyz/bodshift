@@ -65,6 +65,9 @@
 													@foreach($bf as $beforePic)
 													@if($beforePic->user_id == $card->id)
 														<img src="{{URL::asset('uploads/user/progress')."/".$beforePic->file}}" alt='journey Phots' class="img-responsive">
+														<div class="row">
+															<div class="col-xs-12 text-center">{{$beforePic->weight}}</div>
+														</div>
 													@endif
 													@endforeach
 									      		@endforeach
@@ -77,6 +80,9 @@
 													@foreach($pg as $progressPic)
 													@if($progressPic->user_id == $card->id)
 														<img src="{{URL::asset('uploads/user/progress')."/".$progressPic->file}}" alt='journey Phots' class="img-responsive">
+														<div class="row">
+															<div class="col-xs-12 text-center">{{$progressPic->weight}}</div>
+														</div>
 													@endif
 													@endforeach
 									      		@endforeach
