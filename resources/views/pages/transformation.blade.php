@@ -94,6 +94,9 @@
 					</div>
 				</div>
 			</div>
+			@if($c % 3 == 0 )
+					<div class="clearfix visible-lg-block visible-md-block"></div>
+					@endif
 			@endforeach
 		</div>
 	</div>
