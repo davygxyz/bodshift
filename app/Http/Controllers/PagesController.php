@@ -144,7 +144,8 @@ class PagesController extends Controller {
 	public function profile($id)
 	{
 		if (Auth::guest()){
-			return Redirect::to('/auth/login');
+			return Redirect::to('/auth/login')
+			->withErrors("Must be logged in to view profile");
 		}
 		$journals = Journal::where('user_id', '=', $id)->where('visible', '=', 1)->first();
 		$before_query = Before::where('user_id', '=', $id)->orderBy('id','DESC')->first();
