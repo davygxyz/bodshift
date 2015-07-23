@@ -21,7 +21,7 @@
         <input type="email" class="form-control" name="email" value="{{ isset(Auth::user()->email) ? Auth::user()->email : '' }}" placeholder="Enter Email Address">
       </div>
       <div class="form-group">
-        <label for="ct-message">Message:</label>
+        <label for="msg">Message:</label>
         <textarea class="form-control" name="msg" rows="3"></textarea>
       </div>
       <div class="checkbox">

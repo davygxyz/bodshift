@@ -49,6 +49,9 @@ Route::post('contact/email', 'Create@contactus');
 
 Route::get('delete/profile','Delete@profile');
 
+Route::get('featured', 'PagesController@get_featured');
+Route::post('featured/post', 'Create@featured');
+
 
 //Gallery Routes
 Route::get('gallery/user_id={id}', 'PagesController@photo_gallery');

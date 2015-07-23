@@ -13,6 +13,7 @@ use App\Journal;
 use App\ForumQuestions;
 use App\ForumAnswer;
 use Mail;
+use App\Featured;
 
 
 
@@ -41,6 +42,12 @@ class Create extends Controller {
 
 	    return Redirect::back();
 	}
+	public function featured(){
+		$data = Request::all();
+		Featured::create(array('q1' => $data['q1'], 'q2'=> $data['q2'], 'q3'=> $data['q3'],'q4'=> $data['q4'],'q5'=> $data['q5'], 'q6'=> $data['q6'], 'q7'=> $data['q7'],'q8'=> $data['q8'],'q9'=> $data['q9'],'user_id'=> $data['user_id'],'username'=> $data['username']));
+		return Redirect::back();
+	}
+
 	public function contactus(){
 		$data = Request::all();
 		var_dump($data);

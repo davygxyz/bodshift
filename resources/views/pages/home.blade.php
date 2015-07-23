@@ -279,14 +279,84 @@
 		</div>
 	</div>
 	<!--CAROUSEL END-->
+	<!--WEBSITE INFORMATION-->
+	<div class='row bottom-margin'>
+		<div class='col-xs-12'>
+			<div class='row'>
+				<div class='col-sm-5 content'>
+					<h3>Welcome to bodshift.com</h3>
+					<p>We offer transformations, motivational media, community forum, personal profiles and more. If any of those topics interest you, feel free to look around and enjoy our content.</p>
+					<p>Stay in touch with your body by using our progress progression tool to help keep track of your body progress. Show others your body journey and help motivate them to start their own. Everyone starts somewhere and we plan to help you along the way.  </p>
+					<p>If you have any questions concerning your body, food plans, what kind of food should you eat, how to gain or lose weight or just a random question.  Use our forum to interact with other members.  </p>
+					<a href='{{url("/about")}}'>More About Us</a>
+				</div>
+				<div class='col-sm-7 content hidden-xs'>
+					<img src="{{ URL::asset('img/user-pro-pic.jpg') }}" alt='Picture of a users profile' class="img-responsive">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--WEBSITE INFORMATION END-->
+
+	<!--FEATURED TRANSFORMATION-->
+	<div class='row bottom-margin'>
+		<div class='col-xs-12'>
+			<div class='row'>
+				<div class="col-xs-12 col-md-9">
+					<div class='row'>
+						<div class='col-xs-12 bottom-margin'>
+							<img src="{{ URL::asset('img/featured-body-trans.jpg') }}" alt='Picture of a users profile' class="img-responsive">
+						</div>
+						<div class='col-xs-12'>
+							<img src="{{ URL::asset('img/featured-transformation-temp.jpg') }}" alt='Picture of a users profile' class="img-responsive">
+							<div class='col-xs-4 col-xs-offset-4' style='margin-top:20px;'>
+								<button class="btn btn-primary center-block" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Read Story</button>
+							</div>
+						</div>
+						<div class='col-xs-12'>
+							<div class="collapse" id="collapseExample">
+							  <div class="well">
+							    <h3>When did you start exercising?</h3>
+							    	<p>{{$featured->q1}}</p>
+								<h3>What is your goal?</h3>
+									<p>{{$featured->q2}}</p>
+								<h3>Why did you get into exercising?</h3>
+									<p>{{$featured->q3}}</p>
+								<h3>Have you every played any sports?</h3>
+									<p>{{$featured->q4}}</p>
+								<h3>Share the person that inspires you.</h3>
+									<p>{{$featured->q5}}</p>
+								<h3>Do you take any supplements?</h3>
+									<p>{{$featured->q6}}</p>
+								<h3>What help would you like to share with others?</h3>
+									<p>{{$featured->q7}}</p>
+								<h3>How many days of the week, do you workout?</h3>
+									<p>{{$featured->q8}}</p>
+								<h3>Social media links.</h3>
+								<p>{{$featured->q9}}</p>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-3 content">
+				  	<h2 class='text-center'>Get Your Transformation Featured</h2>
+				  	<p class='text-center'>Do you have a story to tell? Share your tranformation with others.</p>
+				    <img src="{{ URL::asset('img/featured-photo.jpg') }}" alt='Picture of a users profile' class="img-responsive">
+				    <a class="btn btn-primary center-block" href="{{url('/featured')}}">Get Featured</a>
+			    </div>
+		    </div>
+		</div>
+	</div>
+
+	<!--FEATURED TRANSFORMATION END-->
 	<!--TRANSFORMATIONS-->
 	<div class='row' id='transformations'>
 	  	<div class='col-sm-12'>
-	  		<div class='row'>
+	  		<div class='row home-text-content'>
 	  			<div class='col-sm-12 home-title content'>
-  					<h1>Transformations</h1>
+  					<h1 class='home-text-head'>Transformations</h1>
   					<p>Do you need motivation to kick yourself in to high gear? <br /> See these transformations from other users.</p>
-  					<hr/>
   				</div>
 	  		</div>
 	  		<div class='row'>
@@ -346,11 +416,10 @@
 	<!--NEW USER PANEL-->
 	<div class='row bottom-margin'>
 	  	<div class='col-xs-12'>
-	  		<div class='row hidden-sm hidden-xs'>
+	  		<div class='row hidden-sm hidden-xs home-text-content'>
 	  			<div class='col-sm-12 home-title content'>
-  					<h1>New Users</h1>
+  					<h1 class='home-text-head'>New Users</h1>
   					<p>Welcome our new guests to our community!<br /> View their profile by clicking on their profile picture.</p>
-  					<hr />
   				</div>
 	  		</div>
 	  		<div class='row'>

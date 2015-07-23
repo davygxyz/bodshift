@@ -12,6 +12,14 @@ hr{
 #home-usr-panel{
     background-color: #ebebeb;
 }
+
+.home-text-head{
+    color:white; padding:5px;
+}
+.home-text-content{
+    background-image:url('../img/dark-grungewall.png')
+}
+
 .awr-wpr{
     background-color: white;
     padding:5px;
@@ -22,6 +30,9 @@ hr{
     background-color:#F2F2F2;
     border-radius: 4px;
     border:1px solid #ccc;
+}
+textarea {
+    resize: none;
 }
 #nt-dropdown{
     width: 400px !important;

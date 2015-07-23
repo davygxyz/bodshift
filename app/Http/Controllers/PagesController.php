@@ -16,6 +16,7 @@ use Redirect;
 use App\Newsfeed;
 use App\ForumQuestions;
 use App\ForumAnswer;
+use App\Featured;
 class PagesController extends Controller {
 
 	/**
@@ -30,19 +31,22 @@ class PagesController extends Controller {
 	{
 		$allUsers =  User::orderByRaw('RAND()')->take(12)->get();
 		$title = "Welcome";
+		$featured = Featured::find(1);
 		if (Auth::check()) {
 			$before_query = Before::where('user_id', '=', Auth::user()->id)->orderBy('id','DESC')->first();
 			$progress_pic = Progress::where('user_id', '=', Auth::user()->id)->orderBy('id','DESC')->first();
 		}else{
 			return view("pages.home")
 			->with('title',$title)
-			->with('allUsers',$allUsers);
+			->with('allUsers',$allUsers)
+			->with('featured', $featured);
 		}
 		return view("pages.home")
 		->with('title',$title)
 		->with('before',$before_query)
 		->with('progress',$progress_pic)
-		->with('allUsers',$allUsers);
+		->with('allUsers',$allUsers)
+		->with('featured', $featured);
 	}
 
 	public function about()
@@ -50,6 +54,20 @@ class PagesController extends Controller {
 		$title = "About";
 		return view("pages.about",['title' => $title]);
 	}
+
+	public function get_featured()
+	{
+		if (Auth::guest()){
+			return Redirect::to('/auth/login')
+			->withErrors("Must be logged in to view profile");
+		}
+		$user_query = User::find(Auth::user()->id);
+		$title = "Featured";
+		return view("pages.get_featured")
+		->with('title',$title)
+		->with('user_query', $user_query);
+	}
+
 	public function forum()
 	{
 		if (Auth::guest()){
