@@ -59,7 +59,7 @@ class PagesController extends Controller {
 	{
 		if (Auth::guest()){
 			return Redirect::to('/auth/login')
-			->withErrors("Must be logged in to view profile");
+			->withErrors("Must be logged in to get featured");
 		}
 		$user_query = User::find(Auth::user()->id);
 		$title = "Featured";
